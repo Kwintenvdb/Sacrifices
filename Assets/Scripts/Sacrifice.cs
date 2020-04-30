@@ -22,7 +22,7 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
     [SerializeField] private string description;
     [SerializeField] private float godFavorModifier;
     [SerializeField] private float peopleFavorModifier;
-    [SerializeField] private int queuePosition;
+    [SerializeField] public Transform queueSpot;
 
     public string Name => sacrificeName;
     public string Description => description;
@@ -30,6 +30,12 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
     public float PeopleFavorModifier => peopleFavorModifier;
 
     private MovementState movementState = MovementState.Idle;
+
+    private void Awake()
+    {
+        Queue.Instance.Enqueue(this);
+        transform.position = queueSpot.position;
+    }
 
     private void Start()
     {
