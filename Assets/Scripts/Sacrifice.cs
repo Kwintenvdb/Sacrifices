@@ -41,7 +41,6 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
     {
         // TODO REMOVE THIS
         // This event should only be called once the Sacrifice is first in the queue
-        Game.Instance.RaiseSacrificeReady(this);
     }
 
     // handle going into "dragging mode"
@@ -82,7 +81,10 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
 
     private void Update()
     {
-        // some queue movement code in here maybe
+        transform.position = Vector3.MoveTowards(transform.position, queueSpot.position, Time.deltaTime);
+        if (transform.position == queueSpot.position && queueSpot.gameObject.tag == "READY_SPOT")
+        {
+            Game.Instance.RaiseSacrificeReady(this);
+        }
     }
-
 }

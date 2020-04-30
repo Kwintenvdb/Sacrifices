@@ -12,7 +12,7 @@ public class PointSystem : MonoBehaviour
     {
         Game.Instance.SacrificeKilled += GodSacrifice;
         Game.Instance.SacrificeReleased += SacrificeReleased;
-        Game.Instance.SacrificeMissed += SecrificeMissed;
+        Game.Instance.SacrificeMissed += SacrificeMissed;
     }
     public void GodSacrifice(Sacrifice sacrifice)
     {
@@ -28,7 +28,7 @@ public class PointSystem : MonoBehaviour
         CheckPeopleFavor();
     }
 
-    public void SecrificeMissed(Sacrifice sacrifice)
+    public void SacrificeMissed(Sacrifice sacrifice)
     {
         peopleFavor = sacrifice.PeopleFavorModifier > 0 ? sacrifice.PeopleFavorModifier * missPenalty : sacrifice.PeopleFavorModifier * (1.0f + missPenalty);
         godFavor = sacrifice.GodFavorModifier > 0 ? sacrifice.GodFavorModifier * missPenalty : sacrifice.GodFavorModifier * (1.0f + missPenalty);
