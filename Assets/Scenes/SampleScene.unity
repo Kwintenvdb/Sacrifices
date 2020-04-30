@@ -501,6 +501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1052522055}
   - component: {fileID: 1052522054}
+  - component: {fileID: 1052522056}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged

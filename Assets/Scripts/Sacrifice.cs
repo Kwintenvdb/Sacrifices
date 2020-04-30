@@ -20,8 +20,8 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
 
     [SerializeField] private string sacrificeName;
     [SerializeField] private string description;
-    [SerializeField] private float godFavorModifier;
-    [SerializeField] private float peopleFavorModifier;
+    [SerializeField] public float GodFavorModifier { get; private set; }
+    [SerializeField] public float PeopleFavorModifier { get; private set; }
     [SerializeField] private int queuePosition;
 
     public string Name => sacrificeName;

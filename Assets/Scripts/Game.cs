@@ -7,7 +7,7 @@ public class Game : MonoBehaviour
 
     public event Action<Sacrifice> SacrificeKilled;
     public event Action<Sacrifice> SacrificeReleased;
-    // TODO Sacrifice "missed" event
+    public event Action<Sacrifice> SacrificeMissed;
 
     public event Action<Sacrifice> SacrificeReady;
 
@@ -22,6 +22,11 @@ public class Game : MonoBehaviour
     }
 
     public void RaiseSacrificeReleased(Sacrifice sacrifice)
+    {
+        SacrificeReleased?.Invoke(sacrifice);
+    }
+
+    public void RaiseSacrificeMissed(Sacrifice sacrifice)
     {
         SacrificeReleased?.Invoke(sacrifice);
     }
