@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
+public delegate void PointsUpdated(float godFavor, float peopleFavor);
+
 public class Game : MonoBehaviour
 {
     public static Game Instance { get; private set; }
@@ -10,6 +12,8 @@ public class Game : MonoBehaviour
     public event Action<Sacrifice> SacrificeMissed;
 
     public event Action<Sacrifice> SacrificeReady;
+
+    public event PointsUpdated PointsUpdated;
 
     private void Awake()
     {
@@ -34,5 +38,10 @@ public class Game : MonoBehaviour
     public void RaiseSacrificeReady(Sacrifice sacrifice)
     {
         SacrificeReady?.Invoke(sacrifice);
+    }
+
+    public void RaisePointsUpdated(float godFavor, float peopleFavor)
+    {
+        PointsUpdated?.Invoke(godFavor, peopleFavor);
     }
 }

@@ -17,13 +17,14 @@ public class PointSystem : MonoBehaviour
     public void GodSacrifice(Sacrifice sacrifice)
     {
         godFavor += sacrifice.GodFavorModifier;
+        RaisePointsChangedEvent();
         CheckGodFavor();
-
     }
 
     public void SacrificeReleased(Sacrifice sacrifice)
     {
         peopleFavor += sacrifice.PeopleFavorModifier;
+        RaisePointsChangedEvent();
         CheckPeopleFavor();
     }
 
@@ -31,8 +32,14 @@ public class PointSystem : MonoBehaviour
     {
         peopleFavor = sacrifice.PeopleFavorModifier > 0 ? sacrifice.PeopleFavorModifier * missPenalty : sacrifice.PeopleFavorModifier * (1.0f + missPenalty);
         godFavor = sacrifice.GodFavorModifier > 0 ? sacrifice.GodFavorModifier * missPenalty : sacrifice.GodFavorModifier * (1.0f + missPenalty);
+        RaisePointsChangedEvent();
         CheckPeopleFavor();
         CheckGodFavor();
+    }
+
+    private void RaisePointsChangedEvent()
+    {
+        Game.Instance.RaisePointsUpdated(godFavor, peopleFavor);
     }
 
     private void CheckGodFavor()

@@ -20,12 +20,14 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
 
     [SerializeField] private string sacrificeName;
     [SerializeField] private string description;
-    [SerializeField] public float GodFavorModifier { get; private set; }
-    [SerializeField] public float PeopleFavorModifier { get; private set; }
+    [SerializeField] private float godFavorModifier;
+    [SerializeField] private float peopleFavorModifier;
     [SerializeField] private int queuePosition;
 
     public string Name => sacrificeName;
     public string Description => description;
+    public float GodFavorModifier => godFavorModifier;
+    public float PeopleFavorModifier => peopleFavorModifier;
 
     private MovementState movementState = MovementState.Idle;
 
@@ -67,7 +69,7 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
     {
         Game.Instance.RaiseSacrificeReleased(this);
         print("Sacrifice released");
-        
+
         // TODO: play some sort of animation instead...
         Destroy(gameObject);
     }
