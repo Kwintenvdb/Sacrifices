@@ -22,6 +22,7 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerClickHandler
         print("drag");
     }
 
+
     public void OnPointerClick(PointerEventData eventData)
     {
         print("click");
