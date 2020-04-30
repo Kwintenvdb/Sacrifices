@@ -9,6 +9,8 @@ public class Game : MonoBehaviour
     public event Action<Sacrifice> SacrificeReleased;
     // TODO Sacrifice "missed" event
 
+    public event Action<Sacrifice> SacrificeReady;
+
     private void Awake()
     {
         Instance = this;
@@ -22,5 +24,10 @@ public class Game : MonoBehaviour
     public void RaiseSacrificeReleased(Sacrifice sacrifice)
     {
         SacrificeReleased?.Invoke(sacrifice);
+    }
+
+    public void RaiseSacrificeReady(Sacrifice sacrifice)
+    {
+        SacrificeReady?.Invoke(sacrifice);
     }
 }

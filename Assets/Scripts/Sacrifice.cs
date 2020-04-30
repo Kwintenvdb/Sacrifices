@@ -24,7 +24,17 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
     [SerializeField] private float peopleFavorModifier;
     [SerializeField] private int queuePosition;
 
+    public string Name => sacrificeName;
+    public string Description => description;
+
     private MovementState movementState = MovementState.Idle;
+
+    private void Start()
+    {
+        // TODO REMOVE THIS
+        // This event should only be called once the Sacrifice is first in the queue
+        Game.Instance.RaiseSacrificeReady(this);
+    }
 
     // handle going into "dragging mode"
     public void OnDrag(PointerEventData eventData)
