@@ -22,7 +22,7 @@ Quarantine game jam
 * Queue
   * Sacrifices move one after the other
   * Fixed size of Sacrifices
-(* Spawner for new Sacrifices)
+~* Spawner for new Sacrifices~
 * Dragging and throwing Sacrifices
 * Points system (percentage) for favor of gods / people
   * Start with xx% for each
