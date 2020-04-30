@@ -37,11 +37,24 @@ public class PointSystem : MonoBehaviour
 
     private void CheckGodFavor()
     {
-        // TODO
+        if (godFavor >= 100.0)
+        {
+            print("THE GODS ACKNOWLEDGE YOU!");
+        } else if (godFavor <= 0.0)
+        {
+            print("THE GODS CONDEMN YOU!");
+        }
     }
 
     private void CheckPeopleFavor()
     {
-        // TODO
+        if (godFavor >= 100.0)
+        {
+            print("THE PEOPLE ACKNOWLEDGE YOU!");
+        }
+        else if (godFavor <= 0.0)
+        {
+            print("THE PEOPLE CONDEMN YOU!");
+        }
     }
 }
