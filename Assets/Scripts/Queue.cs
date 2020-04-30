@@ -33,6 +33,7 @@ public class Queue : MonoBehaviour
             {
                 assignments.Add(t, sacrifice);
                 sacrifice.queueSpot = t;
+                return;
             }
         }
     }
