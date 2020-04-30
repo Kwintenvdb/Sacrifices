@@ -21,7 +21,7 @@ public class Queue : MonoBehaviour
 
         Game.Instance.SacrificeKilled += Dequeue;
         Game.Instance.SacrificeMissed += Dequeue;
-        Game.Instance.SacrificeReady += Dequeue;
+        Game.Instance.SacrificeReleased += Dequeue;
     }
 
 
@@ -47,7 +47,7 @@ public class Queue : MonoBehaviour
         {
             if (assignments.ContainsKey(queueSpots[i + 1]))
             {
-                assignments.Add(queueSpots[i], assignments[queueSpots[i + 1]]);
+                assignments[queueSpots[i]] =  assignments[queueSpots[i + 1]];
                 assignments[queueSpots[i + 1]].queueSpot = queueSpots[i];
                 assignments.Remove(queueSpots[i + 1]);
             }
