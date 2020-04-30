@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PointSystem : MonoBehaviour
 {
-    [SerializeField] private float missPenalty;
+    [SerializeField] [Range(0.0F, 1.0F)] private float missPenalty;
     [SerializeField] private float godFavor;
     [SerializeField] private float peopleFavor;
 
     void Awake()
     {
-       // Game.Instance.SacrificeHappened += AddPoints;
+        Game.Instance.SacrificeKilled += GodSacrifice;
+        Game.Instance.SacrificeReleased += SacrificeReleased;
+        Game.Instance.SacrificeMissed += SecrificeMissed;
     }
     public void GodSacrifice(Sacrifice sacrifice)
     {
@@ -33,8 +35,13 @@ public class PointSystem : MonoBehaviour
         CheckGodFavor();
     }
 
-    private void CheckGodFavor() { }
+    private void CheckGodFavor()
+    {
+        // TODO
+    }
 
-    private void CheckPeopleFavor() { }
-
+    private void CheckPeopleFavor()
+    {
+        // TODO
+    }
 }
