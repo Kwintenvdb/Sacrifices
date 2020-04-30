@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Sacrifice : MonoBehaviour
+public class Sacrifice : MonoBehaviour, IDragHandler, IPointerClickHandler
 {
     // each sacrifice needs some stats:
     // * god favor modifier
@@ -15,8 +16,20 @@ public class Sacrifice : MonoBehaviour
     [SerializeField] private float peopleFavorModifier;
     [SerializeField] private int queuePosition;
 
+    // handle going into "dragging mode"
+    public void OnDrag(PointerEventData eventData)
+    {
+        print("drag");
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        print("click");
+    }
+
     private void Update()
     {
         // some queue movement code in here maybe
     }
+
 }
