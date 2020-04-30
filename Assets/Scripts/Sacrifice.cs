@@ -23,6 +23,7 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
     [SerializeField] private float godFavorModifier;
     [SerializeField] private float peopleFavorModifier;
     [SerializeField] public Transform queueSpot;
+    [SerializeField] public float speed = 10;
 
     public string Name => sacrificeName;
     public string Description => description;
@@ -81,10 +82,13 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, queueSpot.position, Time.deltaTime);
-        if (transform.position == queueSpot.position && queueSpot.gameObject.tag == "READY_SPOT")
+        if (movementState == MovementState.Idle)
         {
-            Game.Instance.RaiseSacrificeReady(this);
+            transform.position = Vector3.MoveTowards(transform.position, queueSpot.position, Time.deltaTime * speed);
+            if (transform.position == queueSpot.position && queueSpot.gameObject.tag == "READY_SPOT")
+            {
+                Game.Instance.RaiseSacrificeReady(this);
+            }
         }
     }
 }

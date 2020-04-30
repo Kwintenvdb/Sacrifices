@@ -114,6 +114,7 @@ MonoBehaviour:
   godFavorModifier: 0
   peopleFavorModifier: 0
   queueSpot: {fileID: 0}
+  speed: 5
 --- !u!54 &1149544492749849064
 Rigidbody:
   m_ObjectHideFlags: 0
