@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Security.Cryptography;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public enum MovementState
@@ -43,6 +44,22 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
             movementState = MovementState.Flying;
         }
         // TODO start detecting collision with sacrifice / release zones
+    }
+
+    public void Kill()
+    {
+        Game.Instance.RaiseSacrificeHappened(this);
+        print("Sacrifice killed");
+        Destroy(gameObject);
+    }
+
+    public void Release()
+    {
+        Game.Instance.RaiseSacrificeReleased(this);
+        print("Sacrifice released");
+        
+        // TODO: play some sort of animation instead...
+        Destroy(gameObject);
     }
 
     private void Update()
