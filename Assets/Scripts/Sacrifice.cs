@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public enum MovementState
-{
-    Idle,
-    BeingDragged,
-    Flying
-}
+//public enum MovementState
+//{
+//    Idle,
+//    BeingDragged,
+//    Flying
+//}
 
 public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
 {
