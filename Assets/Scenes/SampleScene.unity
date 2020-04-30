@@ -121,6 +121,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &257871839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 257871841}
+  - component: {fileID: 257871840}
+  m_Layer: 0
+  m_Name: DragRaycastCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &257871840
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257871839}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 48.4, y: 36.08, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &257871841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257871839}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.53}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,13 +343,13 @@ GameObject:
   m_Component:
   - component: {fileID: 960545925}
   - component: {fileID: 960545924}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &960545924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -486,13 +530,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1390845832}
   - component: {fileID: 1390845831}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1390845831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -596,7 +640,7 @@ PrefabInstance:
     - target: {fileID: 3762041469294709688, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.58
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 3762041469294709688, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
@@ -652,6 +696,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3773291767798728781, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3773291767798728781, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: m_Height
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6397848942317680115, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}

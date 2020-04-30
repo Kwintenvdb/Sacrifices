@@ -1,7 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Sacrifice : MonoBehaviour, IDragHandler, IPointerClickHandler
+public enum MovementState
+{
+    Idle,
+    BeingDragged,
+    Flying
+}
+
+public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
 {
     // each sacrifice needs some stats:
     // * god favor modifier
@@ -16,16 +23,26 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerClickHandler
     [SerializeField] private float peopleFavorModifier;
     [SerializeField] private int queuePosition;
 
+    private MovementState movementState = MovementState.Idle;
+
     // handle going into "dragging mode"
     public void OnDrag(PointerEventData eventData)
     {
-        print("drag");
+        // TODO limit dragging area
+        movementState = MovementState.BeingDragged;
+        var position = eventData.pointerCurrentRaycast.worldPosition;
+        position.z = 0;
+        transform.position = position;
     }
 
-
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerUp(PointerEventData eventData)
     {
-        print("click");
+        // Later: actually start flying with velocity of drag
+        if (movementState == MovementState.BeingDragged)
+        {
+            movementState = MovementState.Flying;
+        }
+        // TODO start detecting collision with sacrifice / release zones
     }
 
     private void Update()
