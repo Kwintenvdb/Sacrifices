@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public delegate void PointsUpdated(float godFavor, float peopleFavor);
 
@@ -24,23 +25,27 @@ public class Game : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(this); // Won't be destroyed when transitioning to end game screen.
     }
 
     public void RaiseSacrificeHappened(Sacrifice sacrifice)
     {
         peopleSacrificed.Add(sacrifice.Data);
         SacrificeKilled?.Invoke(sacrifice);
+        CheckGameEnd();
     }
 
     public void RaiseSacrificeReleased(Sacrifice sacrifice)
     {
         peopleSaved.Add(sacrifice.Data);
         SacrificeReleased?.Invoke(sacrifice);
+        CheckGameEnd();
     }
 
     public void RaiseSacrificeMissed(Sacrifice sacrifice)
     {
         SacrificeReleased?.Invoke(sacrifice);
+        CheckGameEnd();
     }
 
     public void RaiseSacrificeReady(Sacrifice sacrifice)
@@ -61,5 +66,13 @@ public class Game : MonoBehaviour
     public void RaisePointsUpdated(float godFavor, float peopleFavor)
     {
         PointsUpdated?.Invoke(godFavor, peopleFavor);
+    }
+
+    private void CheckGameEnd()
+    {
+        if (Queue.Instance.IsEmpty)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }

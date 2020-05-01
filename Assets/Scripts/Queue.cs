@@ -9,6 +9,8 @@ public class Queue : MonoBehaviour
     [SerializeField] private List<Transform> queueSpots;
     private Dictionary<Transform, Sacrifice> assignments = new Dictionary<Transform, Sacrifice>();
 
+    public bool IsEmpty => assignments.Count == 0;
+
     private void Awake()
     {
         Instance = this;
@@ -62,7 +64,7 @@ public class Queue : MonoBehaviour
         {
             var sacrifice = assignment.Value;
             sacrifice.MoveTowardsQueueSpot();
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
