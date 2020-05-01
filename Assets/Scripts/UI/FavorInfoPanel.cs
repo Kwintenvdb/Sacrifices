@@ -3,17 +3,15 @@ using UnityEngine.UI;
 
 public class FavorInfoPanel : MonoBehaviour
 {
-    [SerializeField] private Image godFavorFill;
-    [SerializeField] private Image peopleFavorFill;
+    [SerializeField] private Image kingFavorFill;
 
     private void Awake()
     {
         Game.Instance.PointsUpdated += OnPointsUpdated;
     }
 
-    private void OnPointsUpdated(float godFavor, float peopleFavor)
+    private void OnPointsUpdated(float kingFavor)
     {
-        godFavorFill.fillAmount = godFavor / 100;
-        peopleFavorFill.fillAmount = peopleFavor / 100;
+        kingFavorFill.fillAmount = kingFavor / 100;
     }
 }

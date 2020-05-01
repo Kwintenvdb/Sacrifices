@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public delegate void PointsUpdated(float godFavor, float peopleFavor);
+public delegate void PointsUpdated(float kingFavor);
 
 public class Game : MonoBehaviour
 {
@@ -21,6 +21,8 @@ public class Game : MonoBehaviour
 
     private readonly List<SacrificeData> peopleSacrificed = new List<SacrificeData>();
     private readonly List<SacrificeData> peopleSaved = new List<SacrificeData>();
+
+    public bool Lost { get; private set; }
 
     private void Awake()
     {
@@ -63,16 +65,27 @@ public class Game : MonoBehaviour
         SacrificeThrown?.Invoke(sacrifice);
     }
 
-    public void RaisePointsUpdated(float godFavor, float peopleFavor)
+    public void RaisePointsUpdated(float kingFavor)
     {
-        PointsUpdated?.Invoke(godFavor, peopleFavor);
+        PointsUpdated?.Invoke(kingFavor);
+        if (kingFavor <= 0)
+        {
+            // Lose condition
+            Lost = true;
+            LoadEndGameScene();
+        }
     }
 
     private void CheckGameEnd()
     {
         if (Queue.Instance.IsEmpty)
         {
-            SceneManager.LoadScene(1);
+            LoadEndGameScene();
         }
+    }
+
+    private void LoadEndGameScene()
+    {
+        SceneManager.LoadScene(1);
     }
 }
