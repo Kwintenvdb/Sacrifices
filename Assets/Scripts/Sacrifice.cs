@@ -14,7 +14,7 @@ public enum SacrificeType
 public struct SacrificeData
 {
     public string name;
-    public string description;
+    [TextArea] public string description;
     public SacrificeType type;
 }
 
@@ -22,7 +22,6 @@ public class Sacrifice : MonoBehaviour
 {
     [SerializeField] private SacrificeData sacrificeData;
     [SerializeField] private string sacrificeName;
-    [TextArea] [SerializeField] private string description;
     [SerializeField] private float kingFavorNegativeModifier;
     [SerializeField] public Transform queueSpot;
     [SerializeField] public float speed = 10;
@@ -30,8 +29,6 @@ public class Sacrifice : MonoBehaviour
     [SerializeField] public Collider eventCollider;
 
     public SacrificeData Data => sacrificeData;
-    public string Name => sacrificeName;
-    public string Description => description;
     public float KingFavorNegativeModifier => kingFavorNegativeModifier;
     public bool IsReady { get; private set; }
     public MovementState MovementState { get; set; }

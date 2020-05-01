@@ -31,7 +31,7 @@ public class SacrificeInfoPanel : MonoBehaviour
     {
         // Update UI info
         //nameText.text = sacrifice.Name;
-        ShowKingText(sacrifice.Description);
+        ShowKingText(sacrifice.Data.description);
     }
     
     private void OnSacrificeKilled(Sacrifice sacrifice)
