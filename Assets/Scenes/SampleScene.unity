@@ -716,6 +716,7 @@ MonoBehaviour:
   draggingRadius: 5
   dragJoint: {fileID: 1451238894}
   rigidbodyDragWhileDragging: 1.5
+  hand: {fileID: 376602491}
 --- !u!1001 &330839544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -940,6 +941,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 425668, guid: f80b9a82cf103fc46a271d8c08ba22c0,
     type: 3}
   m_PrefabInstance: {fileID: 369233290}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &376602491 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: fa65d708ee07160419416252b66fdb7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1524335849}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &415956293
 PrefabInstance:
@@ -4630,7 +4637,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fa1a6d53e4676514db60b7c5f8f55775, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0

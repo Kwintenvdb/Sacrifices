@@ -8,6 +8,7 @@ public enum MovementState
 {
     Idle,
     BeingDragged,
+    CollidedWithTerrain,
     Flying
 }
 
@@ -17,6 +18,7 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
     [SerializeField] private float draggingRadius;
     [SerializeField] private SpringJoint dragJoint;
     [SerializeField] private float rigidbodyDragWhileDragging = 1.5f;
+    [SerializeField] private Transform hand;
 
     private Sacrifice sacrifice;
     private Rigidbody sacrificeRigidbody;
@@ -24,6 +26,24 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
     protected void Awake()
     {
         Game.Instance.SacrificeReady += OnSacrificeReady;
+        Cursor.visible = false;
+    }
+
+    protected void Update()
+    {
+        MoveHand();
+    }
+
+    private void MoveHand()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            var worldPos = hit.point;
+            worldPos.z = 0;
+            hand.position = RestrictToCircle(worldPos);
+        }
     }
 
     private void OnSacrificeReady(Sacrifice sacrifice)
@@ -50,18 +70,25 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         var targetPos = eventData.pointerCurrentRaycast.worldPosition;
         targetPos.z = 0;
+        targetPos = RestrictToCircle(targetPos);
+        dragJoint.transform.position = targetPos;
+    }
+
+    private Vector3 RestrictToCircle(Vector3 pos)
+    {
         var centerPos = draggingCenterPoint.position;
-        var distance = Vector3.Distance(targetPos, centerPos);
+        var distance = Vector3.Distance(pos, centerPos);
         if (distance > draggingRadius)
         {
-            var directionCenterToTarget = (targetPos - centerPos).normalized;
-            targetPos = centerPos + directionCenterToTarget * draggingRadius;
+            var directionCenterToTarget = (pos - centerPos).normalized;
+            pos = centerPos + directionCenterToTarget * draggingRadius;
         }
-        dragJoint.transform.position = targetPos;
+        return pos;
     }
 
     private void EnableSacrificeRigidbodyDragging()
     {
+        sacrifice.AllowCollision(false);
         sacrifice.UseGravity(rigidbodyDragWhileDragging);
     }
 

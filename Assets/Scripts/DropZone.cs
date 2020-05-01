@@ -15,7 +15,7 @@ public class DropZone : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var sacrifice = other.GetComponent<Sacrifice>();
-        if (sacrifice && sacrifice.IsFlying)
+        if (sacrifice && (sacrifice.IsFlying || sacrifice.IsOnFloor))
         {
             KillOrReleaseSacrifice(sacrifice);
         }
