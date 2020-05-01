@@ -44,7 +44,7 @@ public class Game : MonoBehaviour
 
     public void RaiseSacrificeMissed(Sacrifice sacrifice)
     {
-        SacrificeReleased?.Invoke(sacrifice);
+        SacrificeMissed?.Invoke(sacrifice);
         CheckGameEnd();
     }
 
