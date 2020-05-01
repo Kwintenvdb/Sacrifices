@@ -6,6 +6,8 @@ public class PointSystem : MonoBehaviour
     [SerializeField] private float kingFavor;
     //[SerializeField] private float peopleFavor;
 
+    public float KingFavor => kingFavor;
+
     void Awake()
     {
         Game.Instance.SacrificeReleased += SacrificeReleased;
