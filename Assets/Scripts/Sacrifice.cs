@@ -22,8 +22,9 @@ public class Sacrifice : MonoBehaviour
     public string Description => description;
     public float GodFavorModifier => godFavorModifier;
     public float PeopleFavorModifier => peopleFavorModifier;
-
-    private MovementState movementState = MovementState.Idle;
+    public bool IsReady { get; private set; }
+    public MovementState MovementState { get; set; }
+    public bool IsFlying => MovementState == MovementState.Flying;
 
     // Leave in start, makes order of operations easier
     private void Start()
@@ -71,6 +72,7 @@ public class Sacrifice : MonoBehaviour
         if (queueSpot.gameObject.tag == "READY_SPOT")
         {
             Game.Instance.RaiseSacrificeReady(this);
+            IsReady = true;
         }
     }
 }

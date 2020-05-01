@@ -11,21 +11,43 @@ public enum MovementState
     Flying
 }
 
-public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHandler, IPointerUpHandler
+public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     [SerializeField] private Transform draggingCenterPoint;
     [SerializeField] private float draggingRadius;
-    [SerializeField] private new Rigidbody rigidbody;
+    [SerializeField] private float rigidbodyDragWhileDragging = 1.5f;
+    [SerializeField] private SpringJoint dragJoint;
 
+
+    private Sacrifice sacrifice;
+    private Rigidbody sacrificeRigidbody;
     private MovementState movementState = MovementState.Idle;
+
+    protected void Awake()
+    {
+        Game.Instance.SacrificeReady += OnSacrificeReady;
+    }
+
+    private void OnSacrificeReady(Sacrifice sacrifice)
+    {
+        this.sacrifice = sacrifice;
+        sacrificeRigidbody = sacrifice.GetComponent<Rigidbody>();
+        dragJoint.connectedBody = sacrificeRigidbody;
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
-        movementState = MovementState.BeingDragged;
+        if (!sacrifice || !sacrifice.IsReady) return;
 
+        sacrifice.MovementState = MovementState.BeingDragged;
+        EnableSacrificeRigidbodyDragging();
+        SetDragPointPosition(eventData);
+    }
+
+    private void SetDragPointPosition(PointerEventData eventData)
+    {
         var targetPos = eventData.pointerCurrentRaycast.worldPosition;
         targetPos.z = 0;
-
         var centerPos = draggingCenterPoint.position;
         var distance = Vector3.Distance(targetPos, centerPos);
         if (distance > draggingRadius)
@@ -33,36 +55,39 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler, 
             var directionCenterToTarget = (targetPos - centerPos).normalized;
             targetPos = centerPos + directionCenterToTarget * draggingRadius;
         }
-
-        transform.position = targetPos;
+        dragJoint.transform.position = targetPos;
     }
 
-    public void OnDrop(PointerEventData eventData)
+    private void EnableSacrificeRigidbodyDragging()
     {
-        print("drop");
-        if (movementState == MovementState.BeingDragged)
-        {
-            movementState = MovementState.Flying;
-            rigidbody.useGravity = true;
-            rigidbody.AddExplosionForce(1000, draggingCenterPoint.position, 10);
-        }
+        sacrificeRigidbody.isKinematic = false;
+        sacrificeRigidbody.useGravity = true;
+        sacrificeRigidbody.drag = rigidbodyDragWhileDragging;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         print("end drag");
-
+        if (sacrifice && sacrifice.MovementState == MovementState.BeingDragged)
+        {
+            ThrowSacrifice();
+        }
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    private void ThrowSacrifice()
     {
-        print("up");
-        
+        Game.Instance.RaiseSacrificeThrown(sacrifice);
+        sacrifice.MovementState = MovementState.Flying;
+        sacrificeRigidbody.drag = 0;
+        dragJoint.connectedBody = null;
+        sacrifice = null;
+        sacrificeRigidbody = null;
     }
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
+        if (!draggingCenterPoint) return;
         Handles.color = Color.green;
         Handles.DrawWireDisc(draggingCenterPoint.position, Vector3.forward,
             draggingRadius);
