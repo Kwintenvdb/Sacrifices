@@ -4,7 +4,8 @@
 public enum DropZoneType
 {
     Kill,
-    Release
+    Release,
+    Miss
 }
 
 public class DropZone : MonoBehaviour
@@ -25,6 +26,10 @@ public class DropZone : MonoBehaviour
         if (dropZoneType == DropZoneType.Kill)
         {
             sacrifice.Kill();
+        }
+        else if (dropZoneType == DropZoneType.Miss)
+        {
+            sacrifice.Miss();
         }
         else
         {

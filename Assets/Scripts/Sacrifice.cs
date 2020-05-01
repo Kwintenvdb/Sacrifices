@@ -34,14 +34,11 @@ public class Sacrifice : MonoBehaviour
         RaiseReadyIfFirstInQueue();
     }
 
-    private void Update()
+    public void Miss()
     {
-        if (transform.position.y < -25.0)
-        {
-            Game.Instance.RaiseSacrificeMissed(this);
-            print("Sacrifice missed");
-            Destroy(gameObject);
-        }
+        Game.Instance.RaiseSacrificeMissed(this);
+        print("Sacrifice missed");
+        Destroy(gameObject);
     }
 
     public void Kill()
