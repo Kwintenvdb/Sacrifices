@@ -8,6 +8,7 @@ public enum MovementState
 {
     Idle,
     BeingDragged,
+    CollidedWithTerrain,
     Flying
 }
 
@@ -62,6 +63,7 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
 
     private void EnableSacrificeRigidbodyDragging()
     {
+        sacrifice.AllowCollision(false);
         sacrifice.UseGravity(rigidbodyDragWhileDragging);
     }
 

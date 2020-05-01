@@ -33,6 +33,7 @@ public class Sacrifice : MonoBehaviour
     public bool IsReady { get; private set; }
     public MovementState MovementState { get; set; }
     public bool IsFlying => MovementState == MovementState.Flying;
+    public bool IsOnFloor => MovementState == MovementState.CollidedWithTerrain;
 
     // Leave in start, makes order of operations easier
     private void Start()
@@ -128,5 +129,33 @@ public class Sacrifice : MonoBehaviour
     public void AllowCollision(bool allow)
     {
         eventCollider.isTrigger = !allow;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (MovementState != MovementState.CollidedWithTerrain)
+        {
+            MovementState = MovementState.CollidedWithTerrain;
+            StartCoroutine(ResetAfterDelay());
+        }
+    }
+
+    private IEnumerator ResetAfterDelay()
+    {
+        // Allow 2 seconds of lying on the floor before resetting.
+        yield return new WaitForSeconds(2);
+
+        // All this code is ugly as shit but I don't want to change it.
+        transform.position = queueSpot.position;
+        transform.rotation = Quaternion.identity;
+        GetComponentInChildren<Animator>().enabled = true;
+        foreach (Rigidbody rigidbody in GetComponentsInChildren<Rigidbody>())
+        {
+            rigidbody.isKinematic = true;
+            rigidbody.useGravity = false;
+        }
+        MovementState = MovementState.Idle;
+        AllowCollision(false);
+        RaiseReadyIfFirstInQueue();
     }
 }
