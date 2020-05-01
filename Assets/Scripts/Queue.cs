@@ -60,6 +60,9 @@ public class Queue : MonoBehaviour
 
     private IEnumerator MoveSacrificesOneByOne()
     {
+        // A small delay to let the king have a comment on what happened before
+        yield return new WaitForSeconds(2);
+
         foreach (var assignment in assignments)
         {
             var sacrifice = assignment.Value;

@@ -113,26 +113,10 @@ public class Sacrifice : MonoBehaviour
             rigidbody.isKinematic = false;
             rigidbody.useGravity = true;
         }
-        foreach (Collider collider in GetComponentsInChildren<Collider>())
-        {
-            //if (collider != eventCollider)
-            //{
-            //    collider.enabled = false;
-            //}
-        }
     }
 
     public void AllowCollision(bool allow)
     {
         eventCollider.isTrigger = !allow;
-    }
-
-    public void useKinematic()
-    {
-        foreach (Rigidbody rigidbody in GetComponentsInChildren<Rigidbody>())
-        {
-            rigidbody.isKinematic = true;
-            rigidbody.useGravity = false;
-        }
     }
 }

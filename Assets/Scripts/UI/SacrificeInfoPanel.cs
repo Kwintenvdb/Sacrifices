@@ -11,6 +11,8 @@ public class SacrificeInfoPanel : MonoBehaviour
     {
         Game.Instance.SacrificeReady += OnSacrificeReady;
         Game.Instance.SacrificeThrown += OnSacrificeThrown;
+        Game.Instance.SacrificeKilled += OnSacrificeKilled;
+        Game.Instance.SacrificeReleased += OnSacrificeReleased;
     }
 
     // Hide panel while sacrifice is being thrown, show again when next is ready.
@@ -19,12 +21,26 @@ public class SacrificeInfoPanel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnSacrificeReady(Sacrifice sacrifice)
+    private void ShowKingText(string text)
     {
         gameObject.SetActive(true);
+        descriptionText.text = text;
+    }
 
+    private void OnSacrificeReady(Sacrifice sacrifice)
+    {
         // Update UI info
         //nameText.text = sacrifice.Name;
-        descriptionText.text = sacrifice.Description;
+        ShowKingText(sacrifice.Description);
+    }
+    
+    private void OnSacrificeKilled(Sacrifice sacrifice)
+    {
+        ShowKingText("Another offer to the gods!");
+    }
+
+    private void OnSacrificeReleased(Sacrifice sacrifice)
+    {
+        ShowKingText("Blasphemy!");
     }
 }
