@@ -27,6 +27,7 @@ public class Sacrifice : MonoBehaviour
     [SerializeField] public Rigidbody rigidBodyToBeDragged;
     [SerializeField] public Collider eventCollider;
     [SerializeField] private ParticleSystem splashParticles;
+    [SerializeField] private ParticleSystem fireballParticles;
 
     public SacrificeData Data => sacrificeData;
     public float KingFavorNegativeModifier => kingFavorNegativeModifier;
@@ -66,6 +67,7 @@ public class Sacrifice : MonoBehaviour
             print("Sacrifice going to be killed");
             Game.Instance.RaiseSacrificeHappened(this);
             print("Sacrifice killed");
+            Instantiate(fireballParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
