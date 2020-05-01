@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using UnityEditor.Experimental.AssetImporters;
 using UnityEngine;
 
 public enum SacrificeType
