@@ -236,7 +236,8 @@ PrefabInstance:
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: description
-      value: my_description 1 2 3 test
+      value: The gods will condemn me if I don't offer them this young life. Poor
+        child.
       objectReference: {fileID: 0}
     - target: {fileID: 6397848942317680115, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
@@ -1467,7 +1468,7 @@ PrefabInstance:
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: description
-      value: my_description 1 2 3 test
+      value: I don't care much for this one. Throw him into the flames with the rest.
       objectReference: {fileID: 0}
     - target: {fileID: 6397848942317680115, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
@@ -2086,7 +2087,7 @@ PrefabInstance:
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: description
-      value: my_description 1 2 3 test
+      value: The gods will be very pleased with this woman's unborn child.
       objectReference: {fileID: 0}
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
@@ -2347,7 +2348,7 @@ PrefabInstance:
     - target: {fileID: 5243888254319300616, guid: ef590a84b61fa8643b0bf6702426be7a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 87
       objectReference: {fileID: 0}
     - target: {fileID: 5243888254319300616, guid: ef590a84b61fa8643b0bf6702426be7a,
         type: 3}
@@ -2509,6 +2510,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7876353436063870904, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876353436063870904, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef590a84b61fa8643b0bf6702426be7a, type: 3}
 --- !u!1001 &6442889093332572191
@@ -2591,7 +2602,7 @@ PrefabInstance:
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: description
-      value: my_description 1 2 3 test
+      value: A thief! Sacrifice him at once!
       objectReference: {fileID: 0}
     - target: {fileID: 6397848942317680115, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3773291767798728781}
   - component: {fileID: 5630319530218765745}
   - component: {fileID: 1149544492749849064}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sacrifice
   m_TagString: Untagged
   m_Icon: {fileID: 0}

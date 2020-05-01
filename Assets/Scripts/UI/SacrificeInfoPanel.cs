@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class SacrificeInfoPanel : MonoBehaviour
 {
-    [SerializeField] private Text nameText;
+    //[SerializeField] private Text nameText;
     [SerializeField] private Text descriptionText;
     // TODO (maybe) "stats" about sacrifice
 
@@ -24,7 +24,7 @@ public class SacrificeInfoPanel : MonoBehaviour
         gameObject.SetActive(true);
 
         // Update UI info
-        nameText.text = sacrifice.Name;
+        //nameText.text = sacrifice.Name;
         descriptionText.text = sacrifice.Description;
     }
 }

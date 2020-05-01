@@ -12,7 +12,7 @@ using UnityEngine.EventSystems;
 public class Sacrifice : MonoBehaviour
 {
     [SerializeField] private string sacrificeName;
-    [SerializeField] private string description;
+    [TextArea][SerializeField] private string description;
     [SerializeField] private float godFavorModifier;
     [SerializeField] private float peopleFavorModifier;
     [SerializeField] public Transform queueSpot;
