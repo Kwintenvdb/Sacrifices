@@ -8,12 +8,19 @@ public class AudioController : MonoBehaviour
     [SerializeField] private AudioSource womanScream;
     [SerializeField] private AudioSource wilhelmScream;
     [SerializeField] private AudioSource splash;
+    [SerializeField] private AudioSource volcanoNoise;
 
     private void Awake()
     {
         Game.Instance.SacrificeDraggingStarted += OnDraggingStarted;
         Game.Instance.SacrificeThrown += OnSacrificeThrown;
+        Game.Instance.SacrificeKilled += OnSacrificeKilled;
         Game.Instance.SacrificeReleased += OnSacrificeReleased;
+    }
+
+    private void OnSacrificeKilled(Sacrifice sacrifice)
+    {
+        volcanoNoise.Play();
     }
 
     private void OnSacrificeReleased(Sacrifice sacrifice)
