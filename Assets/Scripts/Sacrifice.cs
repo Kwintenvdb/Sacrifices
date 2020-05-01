@@ -27,6 +27,7 @@ public class Sacrifice : MonoBehaviour
     [SerializeField] public float speed = 10;
     [SerializeField] public Rigidbody rigidBodyToBeDragged;
     [SerializeField] public Collider eventCollider;
+    [SerializeField] private ParticleSystem splashParticles;
 
     public SacrificeData Data => sacrificeData;
     public float KingFavorNegativeModifier => kingFavorNegativeModifier;
@@ -75,6 +76,7 @@ public class Sacrifice : MonoBehaviour
         {
             print("Sacrifice going to be released");
             Game.Instance.RaiseSacrificeReleased(this);
+            Instantiate(splashParticles, transform.position, Quaternion.identity);
             print("Sacrifice released");
 
             // TODO: play some sort of animation instead...
