@@ -15,9 +15,8 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     [SerializeField] private Transform draggingCenterPoint;
     [SerializeField] private float draggingRadius;
-    [SerializeField] private float rigidbodyDragWhileDragging = 1.5f;
     [SerializeField] private SpringJoint dragJoint;
-
+    [SerializeField] private float rigidbodyDragWhileDragging = 1.5f;
 
     private Sacrifice sacrifice;
     private Rigidbody sacrificeRigidbody;
@@ -30,8 +29,7 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
     private void OnSacrificeReady(Sacrifice sacrifice)
     {
         this.sacrifice = sacrifice;
-        sacrificeRigidbody = sacrifice.GetComponent<Rigidbody>();
-        dragJoint.connectedBody = sacrificeRigidbody;
+        dragJoint.connectedBody = sacrifice.getRigidbodyToBeDragged();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -64,9 +62,7 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
 
     private void EnableSacrificeRigidbodyDragging()
     {
-        sacrificeRigidbody.isKinematic = false;
-        sacrificeRigidbody.useGravity = true;
-        sacrificeRigidbody.drag = rigidbodyDragWhileDragging;
+        sacrifice.useGravity(rigidbodyDragWhileDragging);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -82,10 +78,9 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         Game.Instance.RaiseSacrificeThrown(sacrifice);
         sacrifice.MovementState = MovementState.Flying;
-        sacrificeRigidbody.drag = 0;
+        sacrifice.useGravity(0);
         dragJoint.connectedBody = null;
         sacrifice = null;
-        sacrificeRigidbody = null;
     }
 
 #if UNITY_EDITOR

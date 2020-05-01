@@ -26,6 +26,7 @@ public class Sacrifice : MonoBehaviour
     [SerializeField] private float peopleFavorModifier;
     [SerializeField] public Transform queueSpot;
     [SerializeField] public float speed = 10;
+    [SerializeField] public Rigidbody rigidBodyToBeDragged;
 
     public SacrificeData Data => sacrificeData;
     public string Name => sacrificeName;
@@ -90,6 +91,31 @@ public class Sacrifice : MonoBehaviour
         {
             Game.Instance.RaiseSacrificeReady(this);
             IsReady = true;
+        }
+    }
+
+    public Rigidbody getRigidbodyToBeDragged()
+    {
+        return rigidBodyToBeDragged;
+    }
+
+    public void useGravity(float drag)
+    {
+        GetComponentInChildren<Animator>().enabled = false;
+        foreach( Rigidbody rigidbody in GetComponentsInChildren<Rigidbody>() )
+        {
+            rigidbody.isKinematic = false;
+            rigidbody.useGravity = true;
+            rigidbody.drag = drag;
+        }
+    }
+
+    public void useKinematic()
+    {
+        foreach (Rigidbody rigidbody in GetComponentsInChildren<Rigidbody>())
+        {
+            rigidbody.isKinematic = true;
+            rigidbody.useGravity = false;
         }
     }
 }
