@@ -43,7 +43,8 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float2 pixUv = floor(i.uv * _ScreenParams / _Pixelation) / _ScreenParams * _Pixelation;
+                float2 normalizedPixelation = _Pixelation * _ScreenParams.x / 1000.0;
+                float2 pixUv = floor(i.uv * _ScreenParams / normalizedPixelation) / _ScreenParams * normalizedPixelation;
 
                 fixed4 col = tex2D(_MainTex, pixUv);
                 return col;
