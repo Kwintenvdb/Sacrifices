@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class FavorInfoPanel : MonoBehaviour
 {
     [SerializeField] private Image kingFavorFill;
-    [SerializeField] private Image peopleFavorFill;
 
     private void Awake()
     {
