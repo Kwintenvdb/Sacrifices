@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Collections;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -32,16 +33,12 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
 
     private MovementState movementState = MovementState.Idle;
 
-    private void Awake()
+    // Leave in start, makes order of operations easier
+    private void Start()
     {
         Queue.Instance.Enqueue(this);
         transform.position = queueSpot.position;
-    }
-
-    private void Start()
-    {
-        // TODO REMOVE THIS
-        // This event should only be called once the Sacrifice is first in the queue
+        RaiseReadyIfFirstInQueue();
     }
 
     // handle going into "dragging mode"
@@ -82,13 +79,39 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
 
     private void Update()
     {
-        if (movementState == MovementState.Idle)
+        //if (movementState == MovementState.Idle)
+        //{
+        //    transform.position = Vector3.MoveTowards(transform.position, queueSpot.position, Time.deltaTime * speed);
+        //    if (transform.position == queueSpot.position && queueSpot.gameObject.tag == "READY_SPOT")
+        //    {
+        //        Game.Instance.RaiseSacrificeReady(this);
+        //    }
+        //}
+    }
+
+    public void MoveTowardsQueueSpot()
+    {
+        StartCoroutine(MovementCoroutine());
+    }
+
+    private IEnumerator MovementCoroutine()
+    {
+        print("start moving");
+        var targetPos = queueSpot.position;
+        while (transform.position != targetPos)
         {
-            transform.position = Vector3.MoveTowards(transform.position, queueSpot.position, Time.deltaTime * speed);
-            if (transform.position == queueSpot.position && queueSpot.gameObject.tag == "READY_SPOT")
-            {
-                Game.Instance.RaiseSacrificeReady(this);
-            }
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
+            yield return null;
+        }
+
+        RaiseReadyIfFirstInQueue();
+    }
+
+    private void RaiseReadyIfFirstInQueue()
+    {
+        if (queueSpot.gameObject.tag == "READY_SPOT")
+        {
+            Game.Instance.RaiseSacrificeReady(this);
         }
     }
 }

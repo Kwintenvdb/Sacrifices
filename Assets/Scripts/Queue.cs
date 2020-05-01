@@ -38,7 +38,7 @@ public class Queue : MonoBehaviour
         }
     }
 
-    void Dequeue(Sacrifice sacrifice)
+    private void Dequeue(Sacrifice sacrifice)
     {
         assignments.Remove(sacrifice.queueSpot);
         sacrifice.queueSpot = null;
@@ -51,6 +51,18 @@ public class Queue : MonoBehaviour
                 assignments[queueSpots[i + 1]].queueSpot = queueSpots[i];
                 assignments.Remove(queueSpots[i + 1]);
             }
+        }
+
+        StartCoroutine(MoveSacrificesOneByOne());
+    }
+
+    private IEnumerator MoveSacrificesOneByOne()
+    {
+        foreach (var assignment in assignments)
+        {
+            var sacrifice = assignment.Value;
+            sacrifice.MoveTowardsQueueSpot();
+            yield return new WaitForSeconds(0.3f);
         }
     }
 }
