@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
     public event Action<Sacrifice> SacrificeMissed;
 
     public event Action<Sacrifice> SacrificeReady;
+    public event Action<Sacrifice> SacrificeDraggingStarted;
     public event Action<Sacrifice> SacrificeThrown;
 
     public event PointsUpdated PointsUpdated;
@@ -39,6 +40,11 @@ public class Game : MonoBehaviour
     public void RaiseSacrificeReady(Sacrifice sacrifice)
     {
         SacrificeReady?.Invoke(sacrifice);
+    }
+
+    public void RaiseSacrificeDraggingStarted(Sacrifice sacrifice)
+    {
+        SacrificeDraggingStarted?.Invoke(sacrifice);
     }
 
     public void RaiseSacrificeThrown(Sacrifice sacrifice)

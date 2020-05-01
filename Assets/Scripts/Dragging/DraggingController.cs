@@ -21,7 +21,6 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
 
     private Sacrifice sacrifice;
     private Rigidbody sacrificeRigidbody;
-    private MovementState movementState = MovementState.Idle;
 
     protected void Awake()
     {
@@ -37,10 +36,15 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!sacrifice || !sacrifice.IsReady) return;
+        if (!sacrifice || !sacrifice.IsReady || sacrifice.IsFlying) return;
 
-        sacrifice.MovementState = MovementState.BeingDragged;
-        EnableSacrificeRigidbodyDragging();
+        if (sacrifice.MovementState == MovementState.Idle)
+        {
+            sacrifice.MovementState = MovementState.BeingDragged;
+            EnableSacrificeRigidbodyDragging();
+            Game.Instance.RaiseSacrificeDraggingStarted(sacrifice);
+        }
+
         SetDragPointPosition(eventData);
     }
 
