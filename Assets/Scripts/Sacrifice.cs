@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,15 +9,8 @@ using UnityEngine.EventSystems;
 //    Flying
 //}
 
-public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
+public class Sacrifice : MonoBehaviour
 {
-    // each sacrifice needs some stats:
-    // * god favor modifier
-    // * people favor modifier
-    // * name
-    // * flavor text? / description
-    // * current position in queue
-
     [SerializeField] private string sacrificeName;
     [SerializeField] private string description;
     [SerializeField] private float godFavorModifier;
@@ -41,26 +33,6 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
         RaiseReadyIfFirstInQueue();
     }
 
-    // handle going into "dragging mode"
-    public void OnDrag(PointerEventData eventData)
-    {
-        // TODO limit dragging area
-        movementState = MovementState.BeingDragged;
-        var position = eventData.pointerCurrentRaycast.worldPosition;
-        position.z = 0;
-        transform.position = position;
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        // Later: actually start flying with velocity of drag
-        if (movementState == MovementState.BeingDragged)
-        {
-            movementState = MovementState.Flying;
-        }
-        // TODO start detecting collision with sacrifice / release zones
-    }
-
     public void Kill()
     {
         Game.Instance.RaiseSacrificeHappened(this);
@@ -77,18 +49,6 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
         Destroy(gameObject);
     }
 
-    private void Update()
-    {
-        //if (movementState == MovementState.Idle)
-        //{
-        //    transform.position = Vector3.MoveTowards(transform.position, queueSpot.position, Time.deltaTime * speed);
-        //    if (transform.position == queueSpot.position && queueSpot.gameObject.tag == "READY_SPOT")
-        //    {
-        //        Game.Instance.RaiseSacrificeReady(this);
-        //    }
-        //}
-    }
-
     public void MoveTowardsQueueSpot()
     {
         StartCoroutine(MovementCoroutine());
@@ -96,7 +56,6 @@ public class Sacrifice : MonoBehaviour, IDragHandler, IPointerUpHandler
 
     private IEnumerator MovementCoroutine()
     {
-        print("start moving");
         var targetPos = queueSpot.position;
         while (transform.position != targetPos)
         {

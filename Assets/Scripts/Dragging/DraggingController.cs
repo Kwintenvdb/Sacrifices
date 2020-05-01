@@ -11,7 +11,7 @@ public enum MovementState
     Flying
 }
 
-public class DraggingController : MonoBehaviour, IDragHandler, IDropHandler, IPointerUpHandler
+public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHandler, IPointerUpHandler
 {
     [SerializeField] private Transform draggingCenterPoint;
     [SerializeField] private float draggingRadius;
@@ -46,6 +46,12 @@ public class DraggingController : MonoBehaviour, IDragHandler, IDropHandler, IPo
             rigidbody.useGravity = true;
             rigidbody.AddExplosionForce(1000, draggingCenterPoint.position, 10);
         }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        print("end drag");
+
     }
 
     public void OnPointerUp(PointerEventData eventData)
