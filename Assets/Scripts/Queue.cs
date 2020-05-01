@@ -49,7 +49,7 @@ public class Queue : MonoBehaviour
         {
             if (assignments.ContainsKey(queueSpots[i + 1]))
             {
-                assignments[queueSpots[i]] =  assignments[queueSpots[i + 1]];
+                assignments[queueSpots[i]] = assignments[queueSpots[i + 1]];
                 assignments[queueSpots[i + 1]].queueSpot = queueSpots[i];
                 assignments.Remove(queueSpots[i + 1]);
             }
