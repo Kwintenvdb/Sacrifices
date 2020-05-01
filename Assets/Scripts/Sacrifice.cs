@@ -52,25 +52,37 @@ public class Sacrifice : MonoBehaviour
 
     public void Miss()
     {
-        Game.Instance.RaiseSacrificeMissed(this);
-        print("Sacrifice missed");
-        Destroy(gameObject);
+        if (this != null) // trust me, we need this check
+        {
+            print("Sacrifice going to miss");
+            Game.Instance.RaiseSacrificeMissed(this);
+            print("Sacrifice missed");
+            Destroy(gameObject);
+        }
     }
 
     public void Kill()
     {
-        Game.Instance.RaiseSacrificeHappened(this);
-        print("Sacrifice killed");
-        Destroy(gameObject);
+        if (this != null)
+        {
+            print("Sacrifice going to be killed");
+            Game.Instance.RaiseSacrificeHappened(this);
+            print("Sacrifice killed");
+            Destroy(gameObject);
+        }
     }
 
     public void Release()
     {
-        Game.Instance.RaiseSacrificeReleased(this);
-        print("Sacrifice released");
+        if (this != null)
+        {
+            print("Sacrifice going to be released");
+            Game.Instance.RaiseSacrificeReleased(this);
+            print("Sacrifice released");
 
-        // TODO: play some sort of animation instead...
-        Destroy(gameObject);
+            // TODO: play some sort of animation instead...
+            Destroy(gameObject);
+        }
     }
 
     public void MoveTowardsQueueSpot()
