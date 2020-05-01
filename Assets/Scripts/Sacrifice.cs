@@ -108,6 +108,10 @@ public class Sacrifice : MonoBehaviour
             rigidbody.useGravity = true;
             rigidbody.drag = drag;
         }
+        foreach (Collider collider in GetComponentsInChildren<Collider>())
+        {
+            collider.enabled = false;
+        }
     }
 
     public void useKinematic()
