@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using UnityEditor.Experimental.AssetImporters;
 using UnityEngine;
 
 public enum SacrificeType
@@ -27,6 +28,7 @@ public class Sacrifice : MonoBehaviour
     [SerializeField] public Transform queueSpot;
     [SerializeField] public float speed = 10;
     [SerializeField] public Rigidbody rigidBodyToBeDragged;
+    [SerializeField] public Collider eventCollider;
 
     public SacrificeData Data => sacrificeData;
     public string Name => sacrificeName;
@@ -102,7 +104,7 @@ public class Sacrifice : MonoBehaviour
     public void useGravity(float drag)
     {
         GetComponentInChildren<Animator>().enabled = false;
-        foreach( Rigidbody rigidbody in GetComponentsInChildren<Rigidbody>() )
+        foreach (Rigidbody rigidbody in GetComponentsInChildren<Rigidbody>())
         {
             rigidbody.isKinematic = false;
             rigidbody.useGravity = true;
@@ -110,7 +112,10 @@ public class Sacrifice : MonoBehaviour
         }
         foreach (Collider collider in GetComponentsInChildren<Collider>())
         {
-            collider.enabled = false;
+            if (collider != eventCollider)
+            {
+                collider.enabled = false;
+            }
         }
     }
 
