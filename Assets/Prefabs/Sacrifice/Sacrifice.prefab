@@ -808,12 +808,13 @@ MonoBehaviour:
     description: 
     type: 0
   sacrificeName: my_name
-  description: my_description 1 2 3 test
   kingFavorNegativeModifier: 0
   queueSpot: {fileID: 0}
   speed: 5
   rigidBodyToBeDragged: {fileID: 1446141980185123166}
   eventCollider: {fileID: 3773291767798728781}
+  splashParticles: {fileID: 198341595340134300, guid: c1c88308ebb5d2541a282905b854ee4c,
+    type: 3}
 --- !u!54 &1446141980185123166
 Rigidbody:
   m_ObjectHideFlags: 0
