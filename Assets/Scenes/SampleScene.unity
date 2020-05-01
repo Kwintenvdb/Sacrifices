@@ -239,6 +239,16 @@ PrefabInstance:
       value: The gods will condemn me if I don't offer them this young life. Poor
         child.
       objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.name
+      value: Young girl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.description
+      value: I don't care much for this one. Throw him into the flames with the rest.
+      objectReference: {fileID: 0}
     - target: {fileID: 6397848942317680115, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: m_Name
@@ -1470,6 +1480,16 @@ PrefabInstance:
       propertyPath: description
       value: I don't care much for this one. Throw him into the flames with the rest.
       objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.name
+      value: Some nobody
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.description
+      value: I don't care much for this one. Throw him into the flames with the rest.
+      objectReference: {fileID: 0}
     - target: {fileID: 6397848942317680115, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: m_Name
@@ -2094,6 +2114,16 @@ PrefabInstance:
       propertyPath: sacrificeName
       value: second_name
       objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.name
+      value: Pregnant woman
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.description
+      value: The gods will be very pleased with this woman's unborn child.
+      objectReference: {fileID: 0}
     - target: {fileID: 6397848942317680115, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: m_Name
@@ -2348,7 +2378,7 @@ PrefabInstance:
     - target: {fileID: 5243888254319300616, guid: ef590a84b61fa8643b0bf6702426be7a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 87
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5243888254319300616, guid: ef590a84b61fa8643b0bf6702426be7a,
         type: 3}
@@ -2602,6 +2632,16 @@ PrefabInstance:
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: description
+      value: A thief! Sacrifice him at once!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.name
+      value: Thief
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.description
       value: A thief! Sacrifice him at once!
       objectReference: {fileID: 0}
     - target: {fileID: 6397848942317680115, guid: a227d8f59fbff3d4fbc4cc65776511dc,

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public delegate void PointsUpdated(float godFavor, float peopleFavor);
@@ -17,6 +18,9 @@ public class Game : MonoBehaviour
 
     public event PointsUpdated PointsUpdated;
 
+    private readonly List<SacrificeData> peopleSacrificed = new List<SacrificeData>();
+    private readonly List<SacrificeData> peopleSaved = new List<SacrificeData>();
+
     private void Awake()
     {
         Instance = this;
@@ -24,11 +28,13 @@ public class Game : MonoBehaviour
 
     public void RaiseSacrificeHappened(Sacrifice sacrifice)
     {
+        peopleSacrificed.Add(sacrifice.Data);
         SacrificeKilled?.Invoke(sacrifice);
     }
 
     public void RaiseSacrificeReleased(Sacrifice sacrifice)
     {
+        peopleSaved.Add(sacrifice.Data);
         SacrificeReleased?.Invoke(sacrifice);
     }
 

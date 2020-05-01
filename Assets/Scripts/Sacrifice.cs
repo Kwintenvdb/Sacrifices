@@ -1,23 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-//public enum MovementState
-//{
-//    Idle,
-//    BeingDragged,
-//    Flying
-//}
+[Serializable]
+public struct SacrificeData
+{
+    public string name;
+    public string description;
+}
 
 public class Sacrifice : MonoBehaviour
 {
+    [SerializeField] private SacrificeData sacrificeData;
     [SerializeField] private string sacrificeName;
-    [TextArea][SerializeField] private string description;
+    [TextArea] [SerializeField] private string description;
     [SerializeField] private float godFavorModifier;
     [SerializeField] private float peopleFavorModifier;
     [SerializeField] public Transform queueSpot;
     [SerializeField] public float speed = 10;
 
+    public SacrificeData Data => sacrificeData;
     public string Name => sacrificeName;
     public string Description => description;
     public float GodFavorModifier => godFavorModifier;
