@@ -5135,6 +5135,16 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.007724366
       objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.name
+      value: Just some dude
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.description
+      value: Who's this? Kill him or release, don't care.
+      objectReference: {fileID: 0}
     - target: {fileID: 5708691188922553732, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: m_ConnectedAnchor.x

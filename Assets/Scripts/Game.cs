@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -79,6 +80,7 @@ public class Game : MonoBehaviour
 
     private void CheckGameEnd()
     {
+        if (Lost) return; // We're already loading the end game scene.
         if (Queue.Instance.IsEmpty)
         {
             LoadEndGameScene();
@@ -87,6 +89,12 @@ public class Game : MonoBehaviour
 
     private void LoadEndGameScene()
     {
+        StartCoroutine(LoadEndGameSceneDelayed());
+    }
+
+    private IEnumerator LoadEndGameSceneDelayed()
+    {
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(1);
     }
 }
