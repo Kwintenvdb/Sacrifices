@@ -18,6 +18,7 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
     [SerializeField] private float draggingRadius;
     [SerializeField] private SpringJoint dragJoint;
     [SerializeField] private float rigidbodyDragWhileDragging = 1.5f;
+    [SerializeField] private Transform hand;
 
     private Sacrifice sacrifice;
     private Rigidbody sacrificeRigidbody;
@@ -25,6 +26,18 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
     protected void Awake()
     {
         Game.Instance.SacrificeReady += OnSacrificeReady;
+    }
+
+    protected void Update()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            var worldPos = hit.point;
+            worldPos.z = 0;
+            hand.position = worldPos;
+        }
     }
 
     private void OnSacrificeReady(Sacrifice sacrifice)
