@@ -2,11 +2,19 @@
 using System.Collections;
 using UnityEngine;
 
+public enum SacrificeType
+{
+    Male,
+    Female,
+    Wilhelm
+}
+
 [Serializable]
 public struct SacrificeData
 {
     public string name;
     public string description;
+    public SacrificeType type;
 }
 
 public class Sacrifice : MonoBehaviour
