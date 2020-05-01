@@ -755,7 +755,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257871839}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1000, y: 1000, z: 0.1}
@@ -2280,7 +2280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missPenalty: 0.2
-  kingFavor: 0
+  kingFavor: 100
 --- !u!1 &1090988913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2841,7 +2841,7 @@ SpringJoint:
   m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: 0, y: 0.8, z: 0}
   serializedVersion: 2
-  m_Spring: 1000
+  m_Spring: 100
   m_Damper: 5
   m_MinDistance: 0.2
   m_MaxDistance: 0.4

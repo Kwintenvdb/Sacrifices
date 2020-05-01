@@ -40,6 +40,11 @@ public class Sacrifice : MonoBehaviour
     // Leave in start, makes order of operations easier
     private void Start()
     {
+        foreach (var collider in GetComponentsInChildren<Collider>())
+        {
+            collider.isTrigger = true;
+        }
+
         Queue.Instance.Enqueue(this);
         transform.position = queueSpot.position;
         RaiseReadyIfFirstInQueue();
@@ -99,7 +104,7 @@ public class Sacrifice : MonoBehaviour
         return rigidBodyToBeDragged;
     }
 
-    public void useGravity(float drag)
+    public void UseGravity(float drag)
     {
         GetComponentInChildren<Animator>().enabled = false;
         rigidBodyToBeDragged.drag = drag;
@@ -110,11 +115,16 @@ public class Sacrifice : MonoBehaviour
         }
         foreach (Collider collider in GetComponentsInChildren<Collider>())
         {
-            if (collider != eventCollider)
-            {
-                collider.enabled = false;
-            }
+            //if (collider != eventCollider)
+            //{
+            //    collider.enabled = false;
+            //}
         }
+    }
+
+    public void AllowCollision(bool allow)
+    {
+        eventCollider.isTrigger = !allow;
     }
 
     public void useKinematic()

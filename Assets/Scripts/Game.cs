@@ -70,6 +70,7 @@ public class Game : MonoBehaviour
         PointsUpdated?.Invoke(kingFavor);
         if (kingFavor <= 0)
         {
+            print("lost");
             // Lose condition
             Lost = true;
             LoadEndGameScene();

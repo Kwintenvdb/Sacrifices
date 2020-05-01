@@ -16,7 +16,6 @@ public class PointSystem : MonoBehaviour
     {
         kingFavor -= sacrifice.KingFavorNegativeModifier;
         RaisePointsChangedEvent();
-        CheckKingFavor();
     }
 
     public void SacrificeMissed(Sacrifice sacrifice)
@@ -27,13 +26,5 @@ public class PointSystem : MonoBehaviour
     private void RaisePointsChangedEvent()
     {
         Game.Instance.RaisePointsUpdated(kingFavor);
-    }
-
-    private void CheckKingFavor()
-    {
-        if (kingFavor <= 0)
-        {
-            print("THE KING IS ANGRY");
-        }
     }
 }

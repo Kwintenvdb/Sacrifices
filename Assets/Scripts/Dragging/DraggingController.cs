@@ -62,7 +62,7 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
 
     private void EnableSacrificeRigidbodyDragging()
     {
-        sacrifice.useGravity(rigidbodyDragWhileDragging);
+        sacrifice.UseGravity(rigidbodyDragWhileDragging);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -78,7 +78,8 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         Game.Instance.RaiseSacrificeThrown(sacrifice);
         sacrifice.MovementState = MovementState.Flying;
-        sacrifice.useGravity(0);
+        sacrifice.UseGravity(0);
+        sacrifice.AllowCollision(true);
         dragJoint.connectedBody = null;
         sacrifice = null;
     }
