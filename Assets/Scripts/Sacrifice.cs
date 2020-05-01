@@ -22,16 +22,14 @@ public class Sacrifice : MonoBehaviour
     [SerializeField] private SacrificeData sacrificeData;
     [SerializeField] private string sacrificeName;
     [TextArea] [SerializeField] private string description;
-    [SerializeField] private float godFavorModifier;
-    [SerializeField] private float peopleFavorModifier;
+    [SerializeField] private float kingFavorNegativeModifier;
     [SerializeField] public Transform queueSpot;
     [SerializeField] public float speed = 10;
 
     public SacrificeData Data => sacrificeData;
     public string Name => sacrificeName;
     public string Description => description;
-    public float GodFavorModifier => godFavorModifier;
-    public float PeopleFavorModifier => peopleFavorModifier;
+    public float KingFavorNegativeModifier => kingFavorNegativeModifier;
     public bool IsReady { get; private set; }
     public MovementState MovementState { get; set; }
     public bool IsFlying => MovementState == MovementState.Flying;
