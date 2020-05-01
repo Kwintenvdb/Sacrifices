@@ -7,11 +7,18 @@ public class AudioController : MonoBehaviour
     [SerializeField] private AudioSource manScream;
     [SerializeField] private AudioSource womanScream;
     [SerializeField] private AudioSource wilhelmScream;
+    [SerializeField] private AudioSource splash;
 
     private void Awake()
     {
         Game.Instance.SacrificeDraggingStarted += OnDraggingStarted;
         Game.Instance.SacrificeThrown += OnSacrificeThrown;
+        Game.Instance.SacrificeReleased += OnSacrificeReleased;
+    }
+
+    private void OnSacrificeReleased(Sacrifice sacrifice)
+    {
+        splash.Play();
     }
 
     private void OnSacrificeThrown(Sacrifice sacrifice)
@@ -34,6 +41,4 @@ public class AudioController : MonoBehaviour
     {
         drumRollAudio.Play();
     }
-
-
 }
