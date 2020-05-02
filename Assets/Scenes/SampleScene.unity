@@ -2182,6 +2182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   queueSpots: []
+  isMoving: 0
 --- !u!4 &942672292
 Transform:
   m_ObjectHideFlags: 0
@@ -5443,11 +5444,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 0.04693894
-      objectReference: {fileID: 0}
-    - target: {fileID: 5630319530218765745, guid: b9273aa8c3c266841968a93376dd00e3,
-        type: 3}
-      propertyPath: kingFavorNegativeModifier
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6397848942317680115, guid: b9273aa8c3c266841968a93376dd00e3,
         type: 3}
