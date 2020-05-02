@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
+    [SerializeField] private AudioSource soundtrack;
     [SerializeField] private AudioSource drumRollAudio;
 
     [SerializeField] private AudioSource manScream;
@@ -53,6 +55,15 @@ public class AudioController : MonoBehaviour
 
     private void OnDraggingStarted(Sacrifice sacrifice)
     {
+        //StartCoroutine(PlayDraggingAudio());
+    }
+
+    // This doesn't blend together very nicely :(
+    private IEnumerator PlayDraggingAudio()
+    {
+        soundtrack.Pause();
         drumRollAudio.Play();
+        yield return new WaitForSeconds(drumRollAudio.clip.length);
+        soundtrack.Play();
     }
 }
