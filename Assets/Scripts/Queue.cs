@@ -69,7 +69,7 @@ public class Queue : MonoBehaviour
         {
             var sacrifice = assignment.Value;
             sacrifice.MoveTowardsQueueSpot();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
         }
         isMoving = false;
     }
