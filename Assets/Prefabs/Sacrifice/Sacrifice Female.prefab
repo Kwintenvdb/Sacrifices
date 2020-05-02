@@ -744,7 +744,7 @@ MonoBehaviour:
     releasedDescription: After gaining power she lets you be tossed into the volcano
       for pushing so many people in it!
     type: 1
-  kingFavorNegativeModifier: 0
+  kingFavorNegativeModifier: 20
   queueSpot: {fileID: 0}
   speed: 5
   rigidBodyToBeDragged: {fileID: 1446141980185123166}

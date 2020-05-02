@@ -445,7 +445,7 @@ MonoBehaviour:
       old age, although he screamed a lot.
     releasedDescription: You robbed him of his opportunity to die in honor.
     type: 0
-  kingFavorNegativeModifier: 20
+  kingFavorNegativeModifier: 10
   queueSpot: {fileID: 0}
   speed: 5
   rigidBodyToBeDragged: {fileID: 1446141980185123166}

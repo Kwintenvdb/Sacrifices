@@ -671,7 +671,7 @@ MonoBehaviour:
     releasedDescription: "After pushing you in the volcano, he became the next volcano
       pusher.\r"
     type: 2
-  kingFavorNegativeModifier: 0
+  kingFavorNegativeModifier: 5
   queueSpot: {fileID: 0}
   speed: 5
   rigidBodyToBeDragged: {fileID: 1446141980185123166}

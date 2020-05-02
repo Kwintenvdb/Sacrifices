@@ -2,8 +2,8 @@
 
 public class PointSystem : MonoBehaviour
 {
-    [SerializeField] [Range(0.0F, 1.0F)] private float missPenalty;
-    [SerializeField] private float kingFavor;
+    [SerializeField] [Range(1.0F, 2.0F)] private float missPenalty = 1.15f;
+    [SerializeField] private float kingFavor = 100;
     //[SerializeField] private float peopleFavor;
 
     public float KingFavor => kingFavor;
@@ -12,6 +12,7 @@ public class PointSystem : MonoBehaviour
     {
         Game.Instance.SacrificeReleased += SacrificeReleased;
         Game.Instance.SacrificeMissed += SacrificeMissed;
+        Game.Instance.SacrificeHitTerrain += SacrificeMissed;
     }
 
     public void SacrificeReleased(Sacrifice sacrifice)
@@ -22,7 +23,7 @@ public class PointSystem : MonoBehaviour
 
     public void SacrificeMissed(Sacrifice sacrifice)
     {
-        // TODO: Do anything?
+        sacrifice.kingFavorNegativeModifier *= missPenalty;
     }
 
     private void RaisePointsChangedEvent()

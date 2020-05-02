@@ -745,7 +745,7 @@ MonoBehaviour:
     releasedDescription: The merchant sues you for making him wet and takes all your
       prossessions.
     type: 0
-  kingFavorNegativeModifier: 0
+  kingFavorNegativeModifier: 60
   queueSpot: {fileID: 0}
   speed: 5
   rigidBodyToBeDragged: {fileID: 1446141980185123166}

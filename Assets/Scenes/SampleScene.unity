@@ -2928,7 +2928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3762fb845d0461b47ab9bdac7177e797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missPenalty: 0.2
+  missPenalty: 1.15
   kingFavor: 100
 --- !u!1001 &1070825371
 PrefabInstance:
@@ -3763,7 +3763,7 @@ PrefabInstance:
     - target: {fileID: 3762041469294709688, guid: f49ccce93e1528743b29ac5e5b6d3a36,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3762041469294709688, guid: f49ccce93e1528743b29ac5e5b6d3a36,
         type: 3}
@@ -4735,7 +4735,7 @@ PrefabInstance:
     - target: {fileID: 3762041469294709688, guid: b61d9c231f5229a459afb989bc1cef4d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3762041469294709688, guid: b61d9c231f5229a459afb989bc1cef4d,
         type: 3}
@@ -5407,7 +5407,7 @@ PrefabInstance:
     - target: {fileID: 3762041469294709688, guid: b9273aa8c3c266841968a93376dd00e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3762041469294709688, guid: b9273aa8c3c266841968a93376dd00e3,
         type: 3}
@@ -6055,6 +6055,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5243888254511935642, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: pointSystem
+      value: 
+      objectReference: {fileID: 1052522056}
     - target: {fileID: 5243888254933307113, guid: ef590a84b61fa8643b0bf6702426be7a,
         type: 3}
       propertyPath: m_Name
