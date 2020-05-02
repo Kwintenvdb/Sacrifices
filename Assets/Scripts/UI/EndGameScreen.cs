@@ -8,7 +8,7 @@ public class EndGameScreen : MonoBehaviour
     [SerializeField] private Text sacrificeNameText;
     [SerializeField] private Text sacrificeFlavorText;
 
-    private List<SacrificeResult> results;
+    private List<SacrificeResult> results = new List<SacrificeResult>();
 
     // TODO
     // Fetch information from Game instance
