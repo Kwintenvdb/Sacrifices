@@ -28,6 +28,7 @@ public class Sacrifice : MonoBehaviour
     [SerializeField] public Collider eventCollider;
     [SerializeField] private ParticleSystem splashParticles;
     [SerializeField] private ParticleSystem fireballParticles;
+    [SerializeField] private Animator animator;
 
     public SacrificeData Data => sacrificeData;
     public float KingFavorNegativeModifier => kingFavorNegativeModifier;
@@ -107,6 +108,8 @@ public class Sacrifice : MonoBehaviour
     {
         if (queueSpot.gameObject.tag == "READY_SPOT")
         {
+            animator.SetBool("praying", true);
+            transform.Rotate(Vector3.up * 60);
             Game.Instance.RaiseSacrificeReady(this);
             IsReady = true;
         }
@@ -119,7 +122,7 @@ public class Sacrifice : MonoBehaviour
 
     public void UseGravity(float drag)
     {
-        GetComponentInChildren<Animator>().enabled = false;
+        animator.enabled = false;
         rigidBodyToBeDragged.drag = drag;
         foreach (Rigidbody rigidbody in GetComponentsInChildren<Rigidbody>())
         {

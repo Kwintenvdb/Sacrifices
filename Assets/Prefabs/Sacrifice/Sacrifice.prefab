@@ -817,6 +817,7 @@ MonoBehaviour:
     type: 3}
   fireballParticles: {fileID: 198706150799401992, guid: a990e3ac1318b834488c784d851f42a9,
     type: 3}
+  animator: {fileID: 5909232160970778407}
 --- !u!54 &1446141980185123166
 Rigidbody:
   m_ObjectHideFlags: 0
