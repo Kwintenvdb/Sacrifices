@@ -7,25 +7,39 @@ public class EndGameScreen : MonoBehaviour
 {
     [SerializeField] private Text sacrificeNameText;
     [SerializeField] private Text sacrificeFlavorText;
+    [SerializeField] private Text lostText;
 
     private List<SacrificeResult> results = new List<SacrificeResult>();
 
-    // TODO
-    // Fetch information from Game instance
-    // Display information in scene / spawn objects as needed
     void Awake()
     {
-        // TODO: What to show if lost?
-
         Cursor.visible = true;
 
         // For debugging only
         if (!Game.Instance) return;
 
+        lostText.gameObject.SetActive(false);
+        if (Game.Instance.Lost)
+        {
+            OnLost();
+            return;
+        }
+
         results = Game.Instance.Sacrifices;
         foreach (SacrificeResult sacrificeResult in results)
         {
             GetComponentInChildren<Text>().text += "\n" + sacrificeResult.sacrifice.name + " was " + (sacrificeResult.type == DropZoneType.Kill? "killed. " + sacrificeResult.sacrifice.killedDescription : "released. " + sacrificeResult.sacrifice.releasedDescription);
+        }
+    }
+
+    private void OnLost()
+    {
+        lostText.gameObject.SetActive(true);
+        // Destroy everything else
+        var sacrifices = FindObjectsOfType<Sacrifice>();
+        foreach (var sacrifice in sacrifices)
+        {
+            Destroy(sacrifice.gameObject);
         }
     }
 
