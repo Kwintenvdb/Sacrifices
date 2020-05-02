@@ -168,7 +168,7 @@ public class Sacrifice : MonoBehaviour
     {
         // Allow 3 seconds of lying on the floor before resetting.
         yield return new WaitForSeconds(3);
-        ResetToQueue();
+        Miss();
     }
 
     private void ResetToQueue()
