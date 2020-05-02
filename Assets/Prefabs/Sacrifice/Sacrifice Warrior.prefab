@@ -667,9 +667,9 @@ MonoBehaviour:
     name: A brave warrior
     description: A warrior who defended the kingdom bravely in many battles. A worthy
       sacrifice!
-    killedDescription: With him gone, many deserted and the kingdom stood no chance
-      against the invading spaniards.
-    releasedDescription: After meeting some nice pale people he guided them to the
+    killedDescription: With him gone, many deserted, and the kingdom stood no chance
+      against the invading Spaniards.
+    releasedDescription: After meeting some nice pale people, he guided them to the
       village. The rest is history.
     type: 0
   kingFavorNegativeModifier: 15
