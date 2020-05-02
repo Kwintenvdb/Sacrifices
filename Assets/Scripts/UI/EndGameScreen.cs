@@ -10,6 +10,8 @@ public class EndGameScreen : MonoBehaviour
     // Display information in scene / spawn objects as needed
     void Awake()
     {
+        // TODO: What to show if lost?
+
         Cursor.visible = true;
         foreach (SacrificeResult sacrificeResult in Game.Instance.Sacrifices)
         {
