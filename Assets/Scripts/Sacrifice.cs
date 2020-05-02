@@ -54,9 +54,14 @@ public class Sacrifice : MonoBehaviour
         }
 
         animator.SetBool("fat", fat);
-        Queue.Instance.Enqueue(this);
-        transform.position = queueSpot.position;
-        RaiseReadyIfFirstInQueue();
+
+        // Only false in end game screen.
+        if (Queue.Instance)
+        {
+            Queue.Instance.Enqueue(this);
+            transform.position = queueSpot.position;
+            RaiseReadyIfFirstInQueue();
+        }
     }
 
     public void Miss()
