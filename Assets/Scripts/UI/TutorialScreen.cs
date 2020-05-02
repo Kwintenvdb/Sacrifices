@@ -9,7 +9,7 @@ public class TutorialScreen : MonoBehaviour
     }
     void OnGUI()
     {
-        if (Event.current.Equals(Event.KeyboardEvent("Return")))
+        if (Event.current.keyCode == KeyCode.Return || Event.current.keyCode == KeyCode.KeypadEnter || Event.current.keyCode == KeyCode.Space)
         {
             StartGame();
         }
