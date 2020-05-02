@@ -741,7 +741,8 @@ MonoBehaviour:
     name: Emil
     description: Who's this? Kill him or release, don't care.
     killedDescription: He was a good father and left several mourning children behind.
-    releasedDescription: He is a serial killer that now can continue on his spree.
+    releasedDescription: He is a serial killer who can now continue on his spree
+      thanks to your mercy.
     type: 0
   kingFavorNegativeModifier: 1
   queueSpot: {fileID: 0}
