@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sacrificeData:
-    name: Just some dude
+    name: Emil
     description: Who's this? Kill him or release, don't care.
     killedDescription: He was a good father and left several mourning children behind.
     releasedDescription: He is a serial killer that now can continue on his spree.
