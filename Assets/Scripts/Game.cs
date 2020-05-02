@@ -117,6 +117,6 @@ public class Game : MonoBehaviour
     private IEnumerator LoadEndGameSceneDelayed()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("EndGameScreen");
     }
 }

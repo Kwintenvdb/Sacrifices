@@ -20,6 +20,6 @@ public class EndGameScreen : MonoBehaviour
     public void RestartGame()
     {
         Destroy(Game.Instance.gameObject);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("TutorialScene");
     }
 }
