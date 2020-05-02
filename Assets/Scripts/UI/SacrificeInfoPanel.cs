@@ -33,6 +33,7 @@ public class SacrificeInfoPanel : MonoBehaviour
 
     private void ShowKingText(string text)
     {
+        print("adding king text: " + text);
         // add new text to list, and coroutine works of that list
         gameObject.SetActive(true);
         if (messageQueue.Count == 0) { 
