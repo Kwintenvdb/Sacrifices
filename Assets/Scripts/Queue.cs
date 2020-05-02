@@ -22,7 +22,6 @@ public class Queue : MonoBehaviour
         }
 
         Game.Instance.SacrificeKilled += Dequeue;
-        Game.Instance.SacrificeMissed += Dequeue;
         Game.Instance.SacrificeReleased += Dequeue;
     }
 

@@ -57,7 +57,8 @@ public class Sacrifice : MonoBehaviour
             print("Sacrifice going to miss");
             Game.Instance.RaiseSacrificeMissed(this);
             print("Sacrifice missed");
-            Destroy(gameObject);
+
+            ResetToQueue();
         }
     }
 
@@ -150,6 +151,11 @@ public class Sacrifice : MonoBehaviour
         // Allow 2 seconds of lying on the floor before resetting.
         yield return new WaitForSeconds(2);
 
+        ResetToQueue();
+    }
+
+    private void ResetToQueue()
+    {
         // All this code is ugly as shit but I don't want to change it.
         transform.position = queueSpot.position;
         transform.rotation = Quaternion.identity;
