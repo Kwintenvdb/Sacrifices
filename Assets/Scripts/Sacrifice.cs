@@ -151,9 +151,8 @@ public class Sacrifice : MonoBehaviour
 
     private IEnumerator ResetAfterDelay()
     {
-        // Allow 2 seconds of lying on the floor before resetting.
-        yield return new WaitForSeconds(2);
-
+        // Allow 3 seconds of lying on the floor before resetting.
+        yield return new WaitForSeconds(3);
         ResetToQueue();
     }
 
