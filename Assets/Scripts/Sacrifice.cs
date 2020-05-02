@@ -31,6 +31,7 @@ public class Sacrifice : MonoBehaviour
     [SerializeField] private ParticleSystem splashParticles;
     [SerializeField] private ParticleSystem fireballParticles;
     [SerializeField] private Animator animator;
+    [SerializeField] private Boolean fat = false;
 
     public SacrificeData Data => sacrificeData;
     public float KingFavorNegativeModifier => kingFavorNegativeModifier;
@@ -46,7 +47,14 @@ public class Sacrifice : MonoBehaviour
         {
             collider.isTrigger = true;
         }
+        foreach (Rigidbody rigidbody in GetComponentsInChildren<Rigidbody>())
+        {
+            rigidbody.isKinematic = true;
+            rigidbody.useGravity = false;
+            rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
+        }
 
+        animator.SetBool("fat", fat);
         Queue.Instance.Enqueue(this);
         transform.position = queueSpot.position;
         RaiseReadyIfFirstInQueue();
