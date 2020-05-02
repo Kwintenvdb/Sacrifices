@@ -361,6 +361,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6838814306759482748, guid: 833ebaf0fb881b74c867e14465270a53,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7082827283814826226, guid: 833ebaf0fb881b74c867e14465270a53,
         type: 3}
       propertyPath: cloudStartSpeed
@@ -439,6 +444,11 @@ PrefabInstance:
     - target: {fileID: 4222116302383748531, guid: 833ebaf0fb881b74c867e14465270a53,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838814306759482748, guid: 833ebaf0fb881b74c867e14465270a53,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7082827283814826226, guid: 833ebaf0fb881b74c867e14465270a53,
@@ -524,6 +534,11 @@ PrefabInstance:
     - target: {fileID: 4222116302383748531, guid: 833ebaf0fb881b74c867e14465270a53,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838814306759482748, guid: 833ebaf0fb881b74c867e14465270a53,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7082827283814826226, guid: 833ebaf0fb881b74c867e14465270a53,
