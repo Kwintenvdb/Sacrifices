@@ -24,12 +24,10 @@ public class EndGameScreen : MonoBehaviour
         {
             OnLost();
             return;
-        }else
-        {
-            OnWin();
         }
 
         results = Game.Instance.Sacrifices;
+        OnWin();
         foreach (SacrificeResult sacrificeResult in results)
         {
             GetComponentInChildren<Text>().text += "\n" + sacrificeResult.sacrifice.name + " was " + (sacrificeResult.type == DropZoneType.Kill? "killed. " + sacrificeResult.sacrifice.killedDescription : "released. " + sacrificeResult.sacrifice.releasedDescription);
