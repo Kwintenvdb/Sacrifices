@@ -56,7 +56,7 @@ public class SacrificeInfoPanel : MonoBehaviour
                 descriptionText.text += c;
                 yield return new WaitForSeconds(0.015f);
             }
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(1f);
             messageQueue.Dequeue();
         }
     }

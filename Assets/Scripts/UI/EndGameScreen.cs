@@ -8,6 +8,7 @@ public class EndGameScreen : MonoBehaviour
     [SerializeField] private Text sacrificeNameText;
     [SerializeField] private Text sacrificeFlavorText;
     [SerializeField] private Text lostText;
+    [SerializeField] private Material deadMaterial;
 
     private List<SacrificeResult> results = new List<SacrificeResult>();
 
@@ -23,12 +24,24 @@ public class EndGameScreen : MonoBehaviour
         {
             OnLost();
             return;
+        }else
+        {
+            OnWin();
         }
 
         results = Game.Instance.Sacrifices;
         foreach (SacrificeResult sacrificeResult in results)
         {
             GetComponentInChildren<Text>().text += "\n" + sacrificeResult.sacrifice.name + " was " + (sacrificeResult.type == DropZoneType.Kill? "killed. " + sacrificeResult.sacrifice.killedDescription : "released. " + sacrificeResult.sacrifice.releasedDescription);
+        }
+    }
+
+    private void OnWin()
+    {
+        var sacrificesMesheshes = FindObjectsOfType<SkinnedMeshRenderer>();
+        foreach (var mesh in sacrificesMesheshes)
+        {
+            mesh.material = deadMaterial;
         }
     }
 
