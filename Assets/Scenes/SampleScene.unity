@@ -3170,6 +3170,11 @@ PrefabInstance:
       propertyPath: sacrificeData.type
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.releasedDescription
+      value: After pushing you in the volcano, he became the next volcano pusher.
+      objectReference: {fileID: 0}
     - target: {fileID: 5708691188922553732, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -5019,6 +5024,16 @@ PrefabInstance:
       propertyPath: sacrificeData.type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.killedDescription
+      value: Two birds, one volcano.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.releasedDescription
+      value: She drowned.
+      objectReference: {fileID: 0}
     - target: {fileID: 5708691188922553732, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -5895,6 +5910,16 @@ PrefabInstance:
         type: 3}
       propertyPath: sacrificeData.description
       value: Who's this? Kill him or release, don't care.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.killedDescription
+      value: He was a good father and left several mourning children behind.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.releasedDescription
+      value: He is a serial killer that now can continue on his spree.
       objectReference: {fileID: 0}
     - target: {fileID: 5708691188922553732, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}

@@ -13,7 +13,7 @@ public class EndGameScreen : MonoBehaviour
         Cursor.visible = true;
         foreach (SacrificeResult sacrificeResult in Game.Instance.Sacrifices)
         {
-            GetComponentInChildren<Text>().text += "\n" + sacrificeResult.sacrifice.name + " was " + (sacrificeResult.type == DropZoneType.Kill? "killed." : "released.");
+            GetComponentInChildren<Text>().text += "\n" + sacrificeResult.sacrifice.name + " was " + (sacrificeResult.type == DropZoneType.Kill? "killed. " + sacrificeResult.sacrifice.killedDescription : "released." + sacrificeResult.sacrifice.releasedDescription);
         }
     }
 

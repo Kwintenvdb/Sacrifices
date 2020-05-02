@@ -14,6 +14,8 @@ public struct SacrificeData
 {
     public string name;
     [TextArea] public string description;
+    [TextArea] public string killedDescription;
+    [TextArea] public string releasedDescription;
     public SacrificeType type;
 }
 
