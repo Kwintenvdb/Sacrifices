@@ -439,11 +439,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sacrificeData:
-    name: 
-    description: 
+    name: Old man
+    description: This elder has already seen his best days. Sacrifice him with dignity.
     type: 0
   sacrificeName: my_name
-  kingFavorNegativeModifier: 0
+  kingFavorNegativeModifier: 20
   queueSpot: {fileID: 0}
   speed: 5
   rigidBodyToBeDragged: {fileID: 1446141980185123166}
