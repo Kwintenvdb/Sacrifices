@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SacrificeInfoPanel : MonoBehaviour
 {
     //[SerializeField] private Text nameText;
+    [SerializeField] private GameObject textContainer;
     [SerializeField] private Text descriptionText;
     [SerializeField] private PointSystem pointSystem;
     // TODO (maybe) "stats" about sacrifice
@@ -28,14 +29,13 @@ public class SacrificeInfoPanel : MonoBehaviour
     // Hide panel while sacrifice is being thrown, show again when next is ready.
     private void OnSacrificeThrown(Sacrifice sacrifice)
     {
-        gameObject.SetActive(false);
+        textContainer.SetActive(false);
     }
 
     private void ShowKingText(string text)
     {
         print("adding king text: " + text);
         // add new text to list, and coroutine works of that list
-        gameObject.SetActive(true);
         if (messageQueue.Count == 0) { 
             messageQueue.Enqueue(text);
             StartCoroutine(TypeKingText());
@@ -49,6 +49,7 @@ public class SacrificeInfoPanel : MonoBehaviour
     {
         while (messageQueue.Count > 0)
         {
+            textContainer.SetActive(true);
             descriptionText.text = null;
 
             var text = messageQueue.Peek();
