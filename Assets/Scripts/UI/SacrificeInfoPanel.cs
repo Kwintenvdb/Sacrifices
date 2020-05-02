@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class SacrificeInfoPanel : MonoBehaviour
@@ -24,13 +25,22 @@ public class SacrificeInfoPanel : MonoBehaviour
     private void ShowKingText(string text)
     {
         gameObject.SetActive(true);
-        descriptionText.text = text;
+        StartCoroutine(TypeKingText(text));
+    }
+
+    private IEnumerator TypeKingText(string text)
+    {
+        descriptionText.text = null;
+        foreach (char c in text)
+        {
+            descriptionText.text += c;
+            yield return new WaitForSeconds(0.015f);
+        }
     }
 
     private void OnSacrificeReady(Sacrifice sacrifice)
     {
         // Update UI info
-        //nameText.text = sacrifice.Name;
         ShowKingText(sacrifice.Data.description);
     }
     
