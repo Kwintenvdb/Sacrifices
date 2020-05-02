@@ -6,6 +6,18 @@ using UnityEngine.SceneManagement;
 
 public delegate void PointsUpdated(float kingFavor);
 
+public struct SacrificeResult
+{
+    public SacrificeData sacrifice;
+    public DropZoneType type;
+
+    public SacrificeResult(SacrificeData sacrifice, DropZoneType type) : this()
+    {
+        this.sacrifice = sacrifice;
+        this.type = type;
+    }
+}
+
 public class Game : MonoBehaviour
 {
     public static Game Instance { get; private set; }
@@ -20,8 +32,12 @@ public class Game : MonoBehaviour
 
     public event PointsUpdated PointsUpdated;
 
+
+    public List<SacrificeResult> Sacrifices = new List<SacrificeResult>();
+
     private readonly List<SacrificeData> peopleSacrificed = new List<SacrificeData>();
     private readonly List<SacrificeData> peopleSaved = new List<SacrificeData>();
+
 
     public bool Lost { get; private set; }
 

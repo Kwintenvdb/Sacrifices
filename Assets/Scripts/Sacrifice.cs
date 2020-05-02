@@ -70,6 +70,9 @@ public class Sacrifice : MonoBehaviour
             Game.Instance.RaiseSacrificeHappened(this);
             print("Sacrifice killed");
             Instantiate(fireballParticles, transform.position, Quaternion.identity);
+
+            Game.Instance.Sacrifices.Add(new SacrificeResult(this.Data, DropZoneType.Kill));
+
             Destroy(gameObject);
         }
     }
@@ -83,7 +86,7 @@ public class Sacrifice : MonoBehaviour
             Instantiate(splashParticles, transform.position, Quaternion.identity);
             print("Sacrifice released");
 
-            // TODO: play some sort of animation instead...
+            Game.Instance.Sacrifices.Add(new SacrificeResult(this.Data, DropZoneType.Release));
             Destroy(gameObject);
         }
     }
