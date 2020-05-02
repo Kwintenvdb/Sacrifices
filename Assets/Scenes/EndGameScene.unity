@@ -3169,6 +3169,7 @@ MonoBehaviour:
   sacrificeNameText: {fileID: 938566788}
   sacrificeFlavorText: {fileID: 1253945462}
   lostText: {fileID: 1801339756}
+  deadMaterial: {fileID: 2100000, guid: 3814cf6e1f3297f4c9bc4158c4032e2e, type: 2}
 --- !u!1 &2019245866
 GameObject:
   m_ObjectHideFlags: 0
