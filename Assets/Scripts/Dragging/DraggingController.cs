@@ -94,7 +94,6 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        print("end drag");
         if (sacrifice && sacrifice.MovementState == MovementState.BeingDragged)
         {
             ThrowSacrifice();
