@@ -11,7 +11,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: No Name
-    second: {fileID: 2100000, guid: 7031d11bff1cd7440b73f61d75300ff7, type: 2}
+    second: {fileID: 2100000, guid: edc9ef3b9bd4ba84a91d3a8c973bb6c2, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -24,14 +24,13 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
-      : position error = 2.502861 mm\n\t'mixamorig:LeftLeg' : position error = 4.083375
-      mm\n\t'mixamorig:LeftFoot' : position error = 3.065176 mm\n\t'mixamorig:LeftToeBase'
-      : position error = 15.152045 mm\n\t'mixamorig:RightUpLeg' : position error
-      = 1.303583 mm\n\t'mixamorig:RightLeg' : position error = 3.140326 mm\n\t'mixamorig:RightFoot'
-      : position error = 2.583877 mm\n\t'mixamorig:RightToeBase' : position error
-      = 5.502487 mm\n"
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'mixamorig:LeftUpLeg' : position
+      error = 2.502861 mm\n\t'mixamorig:LeftLeg' : position error = 4.083375 mm\n\t'mixamorig:LeftFoot'
+      : position error = 3.065176 mm\n\t'mixamorig:LeftToeBase' : position error
+      = 15.152045 mm\n\t'mixamorig:RightUpLeg' : position error = 1.303583 mm\n\t'mixamorig:RightLeg'
+      : position error = 3.140326 mm\n\t'mixamorig:RightFoot' : position error =
+      2.583877 mm\n\t'mixamorig:RightToeBase' : position error = 5.502487 mm\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
