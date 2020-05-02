@@ -41,7 +41,8 @@ public class EndGameScreen : MonoBehaviour
         var sacrifices = FindObjectsOfType<Sacrifice>();
         foreach (var sacrifice in sacrifices)
         {
-            if (results.Find(r => r.sacrifice.name == sacrifice.Data.name).type == DropZoneType.Kill)
+            var sacrificeResult = results.Find(r => r.sacrifice.name == sacrifice.Data.name);
+            if (sacrificeResult.type == DropZoneType.Kill)
             {
                 foreach (SkinnedMeshRenderer meshRenderer in sacrifice.GetComponentsInChildren<SkinnedMeshRenderer>())
                 {
