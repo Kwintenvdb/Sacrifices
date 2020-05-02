@@ -444,7 +444,7 @@ MonoBehaviour:
     killedDescription: Two birds, one volcano.
     releasedDescription: She drowned.
     type: 1
-  kingFavorNegativeModifier: 0
+  kingFavorNegativeModifier: 30
   queueSpot: {fileID: 0}
   speed: 5
   rigidBodyToBeDragged: {fileID: 1446141980185123166}

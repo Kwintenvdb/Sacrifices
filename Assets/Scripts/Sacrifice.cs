@@ -22,7 +22,7 @@ public struct SacrificeData
 public class Sacrifice : MonoBehaviour
 {
     [SerializeField] private SacrificeData sacrificeData;
-    [SerializeField] private float kingFavorNegativeModifier;
+    [SerializeField] public float kingFavorNegativeModifier;
     [SerializeField] public Transform queueSpot;
     [SerializeField] public float speed = 10;
     [SerializeField] public Rigidbody rigidBodyToBeDragged;

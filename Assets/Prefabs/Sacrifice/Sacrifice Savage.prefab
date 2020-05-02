@@ -743,7 +743,7 @@ MonoBehaviour:
     killedDescription: He was a good father and left several mourning children behind.
     releasedDescription: He is a serial killer that now can continue on his spree.
     type: 0
-  kingFavorNegativeModifier: 0
+  kingFavorNegativeModifier: 1
   queueSpot: {fileID: 0}
   speed: 5
   rigidBodyToBeDragged: {fileID: 1446141980185123166}

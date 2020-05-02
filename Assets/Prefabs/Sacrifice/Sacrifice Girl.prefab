@@ -670,7 +670,7 @@ MonoBehaviour:
     killedDescription: You spared her the horrors of British colonialism.
     releasedDescription: She slipped on her way out of the lake and broke her neck.
     type: 1
-  kingFavorNegativeModifier: 0
+  kingFavorNegativeModifier: 35
   queueSpot: {fileID: 0}
   speed: 5
   rigidBodyToBeDragged: {fileID: 1446141980185123166}
