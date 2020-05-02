@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CloudEmitter : MonoBehaviour
 {
+    [SerializeField] float cloudStartSpeed = 1;
+    [SerializeField] float cloudScale = 1;
     [SerializeField] private float cloudSpawnTime = 10f;
     [SerializeField] private float cloudYPositionRange = 5f;
+    [SerializeField] private float cloudZPositionRange = 20f;
     [SerializeField] private List<GameObject> cloudPrefabs;
     [SerializeField] private Transform cloudSpawnLocation;
 
@@ -31,6 +34,9 @@ public class CloudEmitter : MonoBehaviour
         var prefab = cloudPrefabs[cloudIndex];
         var pos = cloudSpawnLocation.position;
         pos.y += Random.Range(-cloudYPositionRange / 2f, cloudYPositionRange / 2f);
-        Instantiate(prefab, pos, Quaternion.identity);
+        pos.z += Random.Range(-cloudZPositionRange / 2f, cloudZPositionRange / 2f);
+        GameObject cloud = Instantiate(prefab, pos, Quaternion.identity);
+        cloud.GetComponent<Cloud>().SetSpeed(cloudStartSpeed);
+        cloud.transform.localScale.Scale(new UnityEngine.Vector3(cloudScale, cloudScale, 1.0f));
     }
 }

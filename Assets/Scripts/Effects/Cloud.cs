@@ -10,4 +10,9 @@ public class Cloud : MonoBehaviour
         pos.x += speed * Time.deltaTime;
         transform.position = pos;
     }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
 }
