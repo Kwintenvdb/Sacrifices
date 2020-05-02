@@ -42,7 +42,6 @@ public class EndGameScreen : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            print("Hovering over" + hit.collider);
             var sacrifice = hit.collider.GetComponent<Sacrifice>();
             if (sacrifice)
             {
