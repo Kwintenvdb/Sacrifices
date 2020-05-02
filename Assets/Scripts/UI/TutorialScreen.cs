@@ -7,4 +7,11 @@ public class TutorialScreen : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    void OnGUI()
+    {
+        if (Event.current.Equals(Event.KeyboardEvent("Return")))
+        {
+            StartGame();
+        }
+    }
 }
