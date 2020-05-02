@@ -610,8 +610,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Well done, you monster.
 
-    Here''s all the people you killed. (also
-    show saved)'
+'
 --- !u!222 &2002373212
 CanvasRenderer:
   m_ObjectHideFlags: 0

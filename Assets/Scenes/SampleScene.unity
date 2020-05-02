@@ -328,12 +328,22 @@ PrefabInstance:
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: sacrificeData.description
-      value: I don't care much for this one. Throw him into the flames with the rest.
+      value: I don't care much for this one. Throw her into the flames with the rest.
       objectReference: {fileID: 0}
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: sacrificeData.type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.releasedDescription
+      value: She slipped on her way out of the lake and broke her neck.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.killedDescription
+      value: You spared her the horrors of British colonialism.
       objectReference: {fileID: 0}
     - target: {fileID: 5708691188922553732, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
@@ -1242,6 +1252,19 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: sacrificeData.killedDescription
+      value: He seemed happy that he doesn't have to suffer the aches of old age,
+        although he screamed a lot.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: sacrificeData.releasedDescription
+      value: 'You robbed him of his opportunity to die in honor.
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 6397848942317680115, guid: 816a0ef07a827454ba9345d9a2be440b,
         type: 3}
@@ -3175,6 +3198,13 @@ PrefabInstance:
       propertyPath: sacrificeData.releasedDescription
       value: After pushing you in the volcano, he became the next volcano pusher.
       objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.killedDescription
+      value: 'You thwarted his plans to kill the king and end sacrifices for good.
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 5708691188922553732, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -4292,17 +4322,28 @@ PrefabInstance:
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: sacrificeData.name
-      value: Young girl
+      value: Daughter of the political rival
       objectReference: {fileID: 0}
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: sacrificeData.description
-      value: I don't care much for this one. Throw him into the flames with the rest.
+      value: Ah, the only child of my political rival. Toss her in!
       objectReference: {fileID: 0}
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: sacrificeData.type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.releasedDescription
+      value: After gaining power she lets you be tossed into the volcano for pushing
+        so many people in it!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
+        type: 3}
+      propertyPath: sacrificeData.killedDescription
+      value: The king will rule forever now.
       objectReference: {fileID: 0}
     - target: {fileID: 5708691188922553732, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
