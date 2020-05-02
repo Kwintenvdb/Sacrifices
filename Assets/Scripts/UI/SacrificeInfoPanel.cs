@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class SacrificeInfoPanel : MonoBehaviour
     [SerializeField] private Text descriptionText;
     [SerializeField] private PointSystem pointSystem;
     // TODO (maybe) "stats" about sacrifice
+
+    private System.Collections.Generic.Queue<string> messageQueue = new System.Collections.Generic.Queue<string>();
 
     private void Awake()
     {
@@ -20,7 +23,6 @@ public class SacrificeInfoPanel : MonoBehaviour
         Game.Instance.SacrificeKilled += OnSacrificeKilled;
         Game.Instance.SacrificeReleased += OnSacrificeReleased;
         Game.Instance.SacrificeMissed += OnSacrificeMissed;
-        Game.Instance.SacrificeHitTerrain += OnSacrificeMissed;
     }
 
     // Hide panel while sacrifice is being thrown, show again when next is ready.
@@ -33,16 +35,29 @@ public class SacrificeInfoPanel : MonoBehaviour
     {
         // add new text to list, and coroutine works of that list
         gameObject.SetActive(true);
-        StartCoroutine(TypeKingText(text));
+        if (messageQueue.Count == 0) { 
+            messageQueue.Enqueue(text);
+            StartCoroutine(TypeKingText());
+        } else
+        {
+            messageQueue.Enqueue(text);
+        }
     }
 
-    private IEnumerator TypeKingText(string text)
+    private IEnumerator TypeKingText()
     {
-        descriptionText.text = null;
-        foreach (char c in text)
+        while (messageQueue.Count > 0)
         {
-            descriptionText.text += c;
-            yield return new WaitForSeconds(0.015f);
+            descriptionText.text = null;
+
+            var text = messageQueue.Peek();
+            foreach (char c in text)
+            {
+                descriptionText.text += c;
+                yield return new WaitForSeconds(0.015f);
+            }
+            yield return new WaitForSeconds(0.1f);
+            messageQueue.Dequeue();
         }
     }
 
@@ -63,7 +78,7 @@ public class SacrificeInfoPanel : MonoBehaviour
         print("SacrificeInfoPanel - Released Triggered");
         if (pointSystem.KingFavor > 80)
         {
-            ShowKingText("We'll it was barely worth it!");
+            ShowKingText("Well, it was barely worth it!");
         } else if (pointSystem.KingFavor > 60)
         {
             ShowKingText("You are starting to anger me!");
@@ -85,7 +100,7 @@ public class SacrificeInfoPanel : MonoBehaviour
     private void OnSacrificeMissed(Sacrifice sacrifice)
     {
         print("SacrificeInfoPanel - Miss Triggered");
-        var random = Random.RandomRange(0f, 3f);
+        float random = UnityEngine.Random.Range(0f, 3f);
         if (random > 2f)
         {
             ShowKingText("What are you doing? Try again!");
