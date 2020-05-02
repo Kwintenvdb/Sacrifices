@@ -668,8 +668,8 @@ MonoBehaviour:
       the rest.\r"
     killedDescription: "You thwarted his plans to kill the king and end sacrifices
       for good.\r"
-    releasedDescription: "After pushing you in the volcano, he became the next volcano
-      pusher.\r"
+    releasedDescription: "After you pushed him into the volcano, he became the next
+      volcano pusher.\r"
     type: 2
   kingFavorNegativeModifier: 5
   queueSpot: {fileID: 0}
