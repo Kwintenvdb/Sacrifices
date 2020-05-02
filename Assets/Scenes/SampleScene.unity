@@ -1262,9 +1262,7 @@ PrefabInstance:
     - target: {fileID: 5630319530218765745, guid: 816a0ef07a827454ba9345d9a2be440b,
         type: 3}
       propertyPath: sacrificeData.releasedDescription
-      value: 'You robbed him of his opportunity to die in honor.
-
-'
+      value: You robbed him of his opportunity to die in honor.
       objectReference: {fileID: 0}
     - target: {fileID: 6397848942317680115, guid: 816a0ef07a827454ba9345d9a2be440b,
         type: 3}
@@ -5537,6 +5535,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1070878762462031973, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070878762462031973, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070878762462031973, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070878762462031973, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070878762462031973, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070878762462031973, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4979479337644639461, guid: ef590a84b61fa8643b0bf6702426be7a,
         type: 3}
       propertyPath: pointSystem
@@ -5718,6 +5746,41 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7876353436063870904, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876353436063870904, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442583815250257400, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442583815250257400, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442583815250257400, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442583815250257400, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442583815250257400, guid: ef590a84b61fa8643b0bf6702426be7a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442583815250257400, guid: ef590a84b61fa8643b0bf6702426be7a,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0

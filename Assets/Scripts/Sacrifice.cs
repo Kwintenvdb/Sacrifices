@@ -22,7 +22,6 @@ public struct SacrificeData
 public class Sacrifice : MonoBehaviour
 {
     [SerializeField] private SacrificeData sacrificeData;
-    [SerializeField] private string sacrificeName;
     [SerializeField] private float kingFavorNegativeModifier;
     [SerializeField] public Transform queueSpot;
     [SerializeField] public float speed = 10;
