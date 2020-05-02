@@ -1198,6 +1198,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1228622584}
     m_Modifications:
+    - target: {fileID: 501225557325530000, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.000000020489097
+      objectReference: {fileID: 0}
+    - target: {fileID: 501225557325530000, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.33811933
+      objectReference: {fileID: 0}
+    - target: {fileID: 501225557325530000, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 887775611808934953, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.0000005736947
+      objectReference: {fileID: 0}
+    - target: {fileID: 887775611808934953, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.6465272
+      objectReference: {fileID: 0}
+    - target: {fileID: 887775611808934953, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290711632754942213, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.20801552
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290711632754942213, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: -0.0026103551
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614020251810331407, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.20801595
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614020251810331407, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.0029935748
+      objectReference: {fileID: 0}
     - target: {fileID: 3762041469294709688, guid: 816a0ef07a827454ba9345d9a2be440b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1253,6 +1303,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3864843328875793741, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.40548435
+      objectReference: {fileID: 0}
+    - target: {fileID: 3864843328875793741, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.1575046
+      objectReference: {fileID: 0}
+    - target: {fileID: 3864843328875793741, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.050656043
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970830396056287512, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.010084882
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970830396056287512, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.033165365
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935617862804686981, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.00000013411045
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935617862804686981, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.33811983
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935617862804686981, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: -0.00000062584877
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242652232366877517, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.39974946
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242652232366877517, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.0661451
+      objectReference: {fileID: 0}
     - target: {fileID: 5630319530218765745, guid: 816a0ef07a827454ba9345d9a2be440b,
         type: 3}
       propertyPath: sacrificeData.killedDescription
@@ -1268,6 +1368,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sacrifice Old Man
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856130420534052386, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.00000036507845
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856130420534052386, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.64701164
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856130420534052386, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: -0.000000052154064
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544498712637643642, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.0007438725
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544498712637643642, guid: 816a0ef07a827454ba9345d9a2be440b,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.0043002516
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 816a0ef07a827454ba9345d9a2be440b, type: 3}
@@ -3405,9 +3530,7 @@ PrefabInstance:
     - target: {fileID: 5630319530218765745, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
       propertyPath: sacrificeData.killedDescription
-      value: 'You thwarted his plans to kill the king and end sacrifices for good.
-
-'
+      value: You thwarted his plans to kill the king and end sacrifices for good.
       objectReference: {fileID: 0}
     - target: {fileID: 5708691188922553732, guid: a227d8f59fbff3d4fbc4cc65776511dc,
         type: 3}
