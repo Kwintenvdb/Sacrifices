@@ -9,6 +9,8 @@ public class Queue : MonoBehaviour
     [SerializeField] private List<Transform> queueSpots;
     private Dictionary<Transform, Sacrifice> assignments = new Dictionary<Transform, Sacrifice>();
 
+    public bool isMoving = false;
+
     public bool IsEmpty => assignments.Count == 0;
 
     private void Awake()
@@ -59,6 +61,7 @@ public class Queue : MonoBehaviour
 
     private IEnumerator MoveSacrificesOneByOne()
     {
+        isMoving = true;
         // A small delay to let the king have a comment on what happened before
         yield return new WaitForSeconds(2);
 
@@ -68,5 +71,6 @@ public class Queue : MonoBehaviour
             sacrifice.MoveTowardsQueueSpot();
             yield return new WaitForSeconds(0.5f);
         }
+        isMoving = false;
     }
 }

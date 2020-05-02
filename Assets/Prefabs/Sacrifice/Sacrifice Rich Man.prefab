@@ -741,9 +741,9 @@ MonoBehaviour:
     name: A rich merchant
     description: Sacrifice him, all his wealth will become mine!
     killedDescription: The first of many sacrificed for their wealth, what have you
-      started!?!
-    releasedDescription: The merchant sues you for making him wet and takes all your
-      prossessions.
+      started?...
+    releasedDescription: The merchant sues you for ruining his clothes, and takes
+      all your prossessions.
     type: 0
   kingFavorNegativeModifier: 60
   queueSpot: {fileID: 0}

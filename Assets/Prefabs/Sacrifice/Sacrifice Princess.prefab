@@ -741,8 +741,8 @@ MonoBehaviour:
     name: Daughter of the political rival
     description: Ah, the only child of my political rival. Toss her in!
     killedDescription: The king will rule forever now.
-    releasedDescription: After gaining power she lets you be tossed into the volcano
-      for pushing so many people in it!
+    releasedDescription: After gaining power, she orders that you be tossed into
+      the volcano for pushing so many people in it!
     type: 1
   kingFavorNegativeModifier: 60
   queueSpot: {fileID: 0}

@@ -54,7 +54,7 @@ public class DraggingController : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!sacrifice || !sacrifice.IsReady || sacrifice.IsFlying) return;
+        if (!sacrifice || !sacrifice.IsReady || sacrifice.IsFlying || Queue.Instance.isMoving) return;
 
         if (sacrifice.MovementState == MovementState.Idle)
         {

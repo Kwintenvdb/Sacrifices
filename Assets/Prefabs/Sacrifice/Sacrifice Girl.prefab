@@ -667,7 +667,7 @@ MonoBehaviour:
     name: Young girl
     description: I don't care much for this one. Throw her into the flames with the
       rest.
-    killedDescription: You spared her the horrors of British colonialism.
+    killedDescription: You spared her the horrors of Spanish colonialism.
     releasedDescription: She slipped on her way out of the lake and broke her neck.
     type: 1
   kingFavorNegativeModifier: 35
