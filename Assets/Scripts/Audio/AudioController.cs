@@ -9,6 +9,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] private AudioSource wilhelmScream;
     [SerializeField] private AudioSource splash;
     [SerializeField] private AudioSource volcanoNoise;
+    [SerializeField] private AudioSource impactSound;
 
     private void Awake()
     {
@@ -16,6 +17,12 @@ public class AudioController : MonoBehaviour
         Game.Instance.SacrificeThrown += OnSacrificeThrown;
         Game.Instance.SacrificeKilled += OnSacrificeKilled;
         Game.Instance.SacrificeReleased += OnSacrificeReleased;
+        Game.Instance.SacrificeHitTerrain += OnTerrainHit;
+    }
+
+    private void OnTerrainHit(Sacrifice sacrifice)
+    {
+        impactSound.Play();
     }
 
     private void OnSacrificeKilled(Sacrifice sacrifice)

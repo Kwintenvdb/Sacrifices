@@ -153,6 +153,7 @@ public class Sacrifice : MonoBehaviour
     {
         if (MovementState != MovementState.CollidedWithTerrain)
         {
+            Game.Instance.RaiseSacrificeHitTerrain(this);
             MovementState = MovementState.CollidedWithTerrain;
             StartCoroutine(ResetAfterDelay());
         }

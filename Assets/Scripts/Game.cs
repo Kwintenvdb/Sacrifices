@@ -25,6 +25,7 @@ public class Game : MonoBehaviour
     public event Action<Sacrifice> SacrificeKilled;
     public event Action<Sacrifice> SacrificeReleased;
     public event Action<Sacrifice> SacrificeMissed;
+    public event Action<Sacrifice> SacrificeHitTerrain;
 
     public event Action<Sacrifice> SacrificeReady;
     public event Action<Sacrifice> SacrificeDraggingStarted;
@@ -92,6 +93,11 @@ public class Game : MonoBehaviour
             Lost = true;
             LoadEndGameScene();
         }
+    }
+
+    public void RaiseSacrificeHitTerrain(Sacrifice sacrifice)
+    {
+        SacrificeHitTerrain?.Invoke(sacrifice);
     }
 
     private void CheckGameEnd()
