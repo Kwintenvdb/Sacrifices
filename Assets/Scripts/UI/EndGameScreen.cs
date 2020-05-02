@@ -38,10 +38,16 @@ public class EndGameScreen : MonoBehaviour
 
     private void OnWin()
     {
-        var sacrificesMesheshes = FindObjectsOfType<SkinnedMeshRenderer>();
-        foreach (var mesh in sacrificesMesheshes)
+        var sacrifices = FindObjectsOfType<Sacrifice>();
+        foreach (var sacrifice in sacrifices)
         {
-            mesh.material = deadMaterial;
+            if (results.Find(r => r.sacrifice.name == sacrifice.Data.name).type == DropZoneType.Kill)
+            {
+                foreach (SkinnedMeshRenderer meshRenderer in sacrifice.GetComponentsInChildren<SkinnedMeshRenderer>())
+                {
+                    meshRenderer.material = deadMaterial;
+                }
+            }
         }
     }
 
