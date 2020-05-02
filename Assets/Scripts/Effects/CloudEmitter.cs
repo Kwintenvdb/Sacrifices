@@ -18,7 +18,9 @@ public class CloudEmitter : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(cloudSpawnTime);
+            var spawnTime = cloudSpawnTime;
+            spawnTime -= Random.Range(0, 2.5f);
+            yield return new WaitForSeconds(spawnTime);
             SpawnCloud();
         }
     }
